@@ -1,0 +1,100 @@
+@charset "utf-8";
+/* CSS Document */
+
+.project-archive{}
+
+.project-archive .item {
+    border-bottom: 1px solid #ddd;
+    margin: 10px 0;
+    padding: 10px 0;
+}
+.project-archive .item .project-title {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+.project-archive .item .meta{}
+.project-archive .item .meta span {
+    background: rgba(221, 221, 221, 0.44) none repeat scroll 0 0;
+    border-radius: 3px;
+    display: inline-block;
+    font-size: 12px;
+    padding: 5px 15px;
+}
+
+.project-archive .item .meta .status.running {
+    background: #37b3ff none repeat scroll 0 0;
+    color: #fff;
+}
+.project-archive .item .meta .status.hold {
+    background: #edc400 none repeat scroll 0 0;
+    color: #fff;
+}
+.project-archive .item .meta .status.completed {
+    background: #0cad6a none repeat scroll 0 0;
+    color: #fff;
+}
+.project-archive .item .meta .status.none {
+    background: #9da9a4 none repeat scroll 0 0;
+    color: #fff;
+}
+
+
+.project-archive .item .meta span.admin {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    display: inline-block;
+    font-size: 12px;
+    padding: 0;
+    vertical-align: top;
+}
+
+.project-archive .item .meta span.admin img {
+    border-radius: 0;
+    margin-right: 4px;
+    vertical-align: top;
+}
+
+.project-archive .item .meta a {
+    text-decoration: none;
+}
+
+
+
+.project-archive .paginate {
+    margin: 20px 0;
+    text-align: center;
+}
+
+
+
+
+
+
+.project-archive .paginate .page-numbers {
+    background: #ddd none repeat scroll 0 0;
+    display: inline-block;
+    margin: 0;
+    padding: 6px 15px;
+    text-decoration: none;
+}
+.project-archive .paginate .page-numbers.current {
+    opacity: 0.5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

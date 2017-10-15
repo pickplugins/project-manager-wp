@@ -1,0 +1,105 @@
+/*
+	Admin Metabox css
+*/
+
+
+/* COLUMN FOR PROJECTS START */
+
+
+
+.type-project .pm_running {
+    background: #826ECC;
+    padding: 0px 20px 3px 20px;
+    display: inline-block;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.type-project .pm_default {
+    background: #16A05C;
+    padding: 0px 20px 3px 20px;
+    display: inline-block;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+
+.wp-list-table .type-project:hover .pm_running,
+.wp-list-table .type-project:hover .pm_default{
+    background: #ce660b;
+}
+
+
+
+.type-project .pm_tasks_count {
+    color: #c55d00;
+    font-weight: 600;
+}
+
+.type-project .pm_projects_date {
+    color: #16A05C;
+    font-weight: 600;
+}
+
+
+
+.type-project .pm_projects_ra_meta.pm_project_admins { color: #3879D9; }
+.type-project .pm_projects_ra_meta.pm_project_clients { color: #FE8163; }
+
+.type-project .pm_projects_ra_meta.pm_tasks_count_completed { color: #16A05C; }
+.type-project .pm_projects_ra_meta.pm_tasks_count_processing { color: #ca9501; }
+
+.type-project .pm_projects_ra_meta.pm_projects_date_remaining { color: #C13C31; }
+
+
+
+
+
+.type-project .pm_projects_ra_meta {
+    font-weight: 600;
+    display: inline-block;
+    padding: 0 5px;
+    border-right: 1px solid #c55d00;
+	font-size: 11px;
+}
+.type-project .pm_projects_ra_meta:first-child {
+    padding-left: 0;
+}
+
+.type-project .pm_projects_ra_meta:last-child {
+    border-right: none;
+}
+
+
+
+.wp-list-table .project-status {
+  color: #fff;
+  display: inline-block;
+  padding: 4px 7px;
+}
+.wp-list-table .project-status.none {
+  background: #ddd none repeat scroll 0 0;
+}
+.wp-list-table .project-status.running {
+  background: #2bbde7 none repeat scroll 0 0;
+}
+.wp-list-table .project-status.hold {
+  background: #fed456 none repeat scroll 0 0;
+}
+.wp-list-table .project-status.completed {
+  background: #35e393 none repeat scroll 0 0;
+}
+
+
+/* COLUMN FOR PROJECTS END */
+
+
+
+
+
+
+
+

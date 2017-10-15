@@ -1,0 +1,370 @@
+/*
+	Admin Metabox css
+*/
+
+#salary_metabox { margin-top: -20px; }
+
+
+
+.type-salary .pm_running {
+    background: #826ECC;
+    padding: 0px 20px 3px 20px;
+    display: inline-block;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.type-salary .pm_default {
+    background: #16A05C;
+    padding: 0px 20px 3px 20px;
+    display: inline-block;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+
+.wp-list-table .type-salary:hover .pm_running,
+.wp-list-table .type-salary:hover .pm_default{
+    background: #ce660b;
+}
+
+
+
+.salary-meta{}
+
+.salary-meta .full {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  width: 100%;
+}
+
+.salary-meta .inner {
+	padding: 7px 20px;
+}
+
+.salary-meta .half {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  width: 49%;
+}
+
+/* post title */
+
+.salary-meta .edit-post-title,
+.salary-meta .edit-post-content {
+    border: 1px solid #ddd;
+    color: #ddd;
+    font-size: 18px;
+    padding: 0px 7px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.salary-meta .post_title, 
+.salary-meta .post_title{
+	width: 100%;
+	display: none;
+}
+
+
+.salary-meta .post_content,
+.salary-meta .post_content{
+	display: none;
+	margin-top: 15px;
+	width: 100%;
+}
+
+.salary-meta .todo-details{
+  display: block;
+  margin: 15px 0 0;
+	}
+
+
+.salary-meta .meta {
+  display: inline-block;
+  margin: 0 20px 20px 0;
+  vertical-align: top;
+}
+
+.salary-meta .meta .title {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.salary-meta .meta {
+  display: inline-block;
+  margin: 0 20px 20px 0;
+  vertical-align: top;
+}
+
+
+.salary-meta .meta .title {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.salary-meta .task-name .select2-container{
+	width:280px;
+	min-width:280px;
+}	
+
+
+
+
+
+
+
+.salary-meta .salary-worker{}
+
+.salary-meta .worker-list .worker {
+	border: 1px solid #ddd;
+	color: #ddd;
+	display: inline-block;
+	font-size: 22px;
+	height: 30px;
+	line-height: normal;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	text-align: center;
+	width: 30px;
+}
+
+
+.salary-meta .worker-list  .worker.add,
+.salary-meta .worker-list .worker.close-search-window {
+  cursor: pointer;
+  text-align:center;
+}
+
+.salary-meta .worker-list .add .search-worker {
+	background: #f2f2f2 none repeat scroll 0 0;
+	display: none;
+	padding: 10px;
+	position: absolute;
+}
+
+.salary-meta .worker-list .worker-result{}
+.salary-meta .worker-list .worker-result .name {
+    font-size: 13px;
+    background: #fff;
+    padding: 5px;
+    color: #929292;
+    margin-bottom: 2px;
+	text-align:left;
+}
+
+.salary-meta .worker-list .worker-result .name span {
+    vertical-align:top;
+}
+
+.salary-meta .worker-list .worker-result .name:hover {
+    background: #4d76ab;
+    color: #fff;
+}
+
+
+
+.salary-meta .worker-list .worker-hover-window{
+	display:none;
+	position: absolute;
+    background: #f2f2f2 none repeat scroll 0 0;
+    color: #355ac7;
+}
+
+.salary-meta .worker-list ._hide {
+	float: right;
+    color: #c76666;
+    padding: 0 7px;
+    background: #ddd;
+    cursor: pointer;
+}
+
+.salary-meta .worker-list ._userdata {
+    padding: 8px 20px 8px 10px;
+    font-size: 15px;
+}
+
+.salary-meta .worker-list ._userdata._userremove {
+    background: #c76666;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+
+
+.salary-meta .todo-progress {
+    
+}
+
+.salary-meta .todo-progress .add-progress{}
+.salary-meta .todo-progress .close-progress{ display:none;}
+
+
+
+.salary-meta .todo-progress .progress-input{
+    display:none;
+	padding: 20px 5px;
+    margin: 10px 0;
+	padding:20px;
+	background:#eee;
+}
+
+.salary-meta .todo-progress .button{
+	margin-top:15px;
+}
+
+.salary-meta .todo-progress .submit-progress-status{
+    padding: 18px;
+    font-size: 25px;
+    color: #a7a5a5;
+	display:none;
+}
+
+
+.salary-meta .todo-progress .progress-list { 
+    overflow-y: scroll;
+    height: 400px;
+}
+
+
+.salary-meta .todo-progress .progress-single { 
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.salary-meta .todo-progress .progress-single:hover .progress-edit{ 
+	display:inline-block;
+}
+
+
+.salary-meta .todo-progress .progress-edit { 
+	float: right;
+	margin-right: 20px;
+	color: #C13C31;
+	text-decoration:none;
+	box-shadow:none;
+	outline:none;
+	display:none;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+
+
+
+
+
+
+.salary-meta .todo-progress .progress-single .thumb{ 
+    border-radius: 20px;
+    display: inline-block;
+    float: left;
+    height: 40px;
+    margin-right: 20px;
+    overflow: hidden;
+    width: 40px;
+}
+
+.salary-meta .todo-progress .progress-single .details{ 
+	margin-left:50px;
+}
+
+
+.salary-meta .todo-progress .progress-single .author{
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.salary-meta .todo-progress .progress-single .date{
+	display: inline-block;
+    font-size: 12px;
+}
+
+
+
+.salary-meta .todo-progress .progress-single .progress-content{
+	padding:10px;
+}
+
+
+.salary-meta .user-list{}
+
+.salary-meta .user-list .user {
+    background: rgba(221, 221, 221, 0.61) none repeat scroll 0 0;
+    cursor: pointer;
+    display: inline-block;
+    height: 50px;
+    margin: 5px;
+    padding: 3px;
+    position: relative;
+    width: 70px;
+}
+.salary-meta .user-list .user:hover .hover {
+    display: inline-block;
+    transition: all 0.5s ease 0s;
+
+}
+
+.salary-meta .user-list .user .late{
+
+}
+
+.salary-meta .user-list .user .is-present {
+    color: #fff;
+    font-size: 18px;
+    padding: 1px 4px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.salary-meta .user-list .user .is-present.yes {
+    background: #22ae58 none repeat scroll 0 0;
+}
+.salary-meta .user-list .user .is-present.no {
+    background: #f00 none repeat scroll 0 0;
+}
+
+.salary-meta .user-list .user .hover {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.12);
+    display: none;
+    left: 0;
+    padding: 10px;
+    position: absolute;
+    top: 50px;
+    width: 250px;
+    z-index: 999;
+}
+
+.salary-meta .user-list .user .is-late {
+    background: #ffd11f none repeat scroll 0 0;
+    bottom: 0;
+    color: #fff;
+    font-size: 18px;
+    padding: 1px 4px;
+    position: absolute;
+    right: 0;
+}
+.salary-meta .user-list .alternate {
+    background: rgba(221, 221, 221, 0.31) none repeat scroll 0 0;
+}
+.salary-meta .user-list .weekend, .salary-meta .user-list .offday {
+    background: rgba(254, 204, 46, 0.5) none repeat scroll 0 0;
+    border-bottom: 1px solid #0b0b0b;
+}

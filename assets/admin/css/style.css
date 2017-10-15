@@ -1,0 +1,84 @@
+/*
+Admin css
+*/
+
+
+@import 'admin-metabox.css';
+@import 'admin-metabox-task.css';
+@import 'admin-metabox-todo.css';
+
+
+@import 'admin-column-project.css';
+@import 'admin-column-task.css';
+@import 'admin-column-todo.css';
+
+
+
+.section_title {
+	margin:3px 0;
+}
+
+
+
+/* ===== PAGINATE ===== */
+.paginate, .container-answer-section .paginate {
+  margin: 30px 0;
+  text-align: center;
+}
+.paginate .page-numbers, .container-answer-section .paginate .page-numbers {
+  background: #f2f2f2 none repeat scroll 0 0;
+  margin: 0 2px;
+  padding: 9px 15px;
+  text-decoration: none;
+}
+
+.paginate .current, .container-answer-section .paginate .current {
+  background: #ddd none repeat scroll 0 0;
+}
+.paginate .pre,
+.container-answer-section .paginate .prev{
+
+}
+.paginate .next,
+.container-answer-section .paginate .next{
+}
+/* ===== PAGINATE ===== */
+
+
+
+
+/* ===== TOAST ===== */
+.toast {
+    width:200px;
+    height:20px;
+    height:auto;
+    position:fixed;
+    right:20px;
+    bottom:30px;
+    background-color: #383838;
+    color: #F0F0F0;
+    font-family: Calibri;
+    font-size: 20px;
+    padding:10px;
+    text-align:center;
+    border-radius: 2px;
+    -webkit-box-shadow: 0px 0px 24px -1px rgba(56, 56, 56, 1);
+    -moz-box-shadow: 0px 0px 24px -1px rgba(56, 56, 56, 1);
+    box-shadow: 0px 0px 24px -1px rgba(56, 56, 56, 1);
+	
+	-webkit-animation-duration: 7s; 
+	animation-duration: 7s; 
+    -webkit-animation-fill-mode: both; 
+    animation-fill-mode: both;
+}
+@-webkit-keyframes pm-shake {
+	0%, 100% {-webkit-transform: translateX(0);} 
+	10%, 30%, 50%, 70%, 90% {-webkit-transform: translateX(-20px);} 
+}
+.pm-shake { 
+	-webkit-animation-name: pm-shake; 
+	animation-name: pm-shake; 
+}
+
+
+/* ===== TOAST ===== */

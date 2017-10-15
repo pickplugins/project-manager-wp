@@ -1,0 +1,94 @@
+/*
+	Admin Metabox css
+*/
+
+
+/* COLUMN FOR PROJECTS START */
+
+
+
+.type-task .pm_running {
+    background: #826ECC;
+    padding: 0px 20px 3px 20px;
+    display: inline-block;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.type-task .pm_running:hover {
+    background: #ce660b;
+}
+
+.type-task .pm_todo_count {
+    color: #c55d00;
+    font-weight: 600;
+}
+
+.type-task .pm_tasks_date {
+    color: #16A05C;
+    font-weight: 600;
+}
+
+
+
+.type-task .pm_tasks_ra_meta.pm_task_worker { color: #DD4F43; }
+
+.type-task .pm_tasks_ra_meta.pm_todo_count_completed { color: #16A05C; }
+.type-task .pm_tasks_ra_meta.pm_todo_count_processing { color: #ca9501; }
+
+.type-task .pm_tasks_ra_meta.pm_tasks_date_remaining { color: #C13C31; }
+
+
+
+
+
+.type-task .pm_tasks_ra_meta {
+    font-weight: 600;
+    display: inline-block;
+    padding: 0 5px;
+    border-right: 1px solid #c55d00;
+	font-size: 11px;
+}
+.type-task .pm_tasks_ra_meta:first-child {
+    padding-left: 0;
+}
+
+.type-task .pm_tasks_ra_meta:last-child {
+    border-right: none;
+}
+
+
+
+.wp-list-table .task-status, .project-meta .task-status .status {
+  color: #fff;
+  display: inline-block;
+  padding: 4px 7px;
+}
+.wp-list-table .task-status.none, .project-meta .task-status .status.none {
+  background: #ddd none repeat scroll 0 0;
+}
+.wp-list-table .task-status.running, .project-meta .task-status .status.running {
+  background: #2bbde7 none repeat scroll 0 0;
+}
+.wp-list-table .task-status.hold, .project-meta .task-status .status.hold {
+  background: #fed456 none repeat scroll 0 0;
+}
+.wp-list-table .task-status.completed, .project-meta .task-status .status.completed {
+  background: #35e393 none repeat scroll 0 0;
+}
+
+
+
+
+
+
+/* COLUMN FOR PROJECTS END */
+
+
+
+
+
+
+
+

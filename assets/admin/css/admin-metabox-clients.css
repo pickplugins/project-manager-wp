@@ -1,0 +1,87 @@
+
+.project-meta .project-clients{}
+
+
+.project-meta .project-clients .client-list{}
+
+	
+.project-meta .project-clients .client-list .client{
+	border: 1px solid #ddd;
+	color: #ddd;
+	display: inline-block;
+	font-size: 22px;
+	height: 30px;
+	line-height: normal;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	width: 30px;
+    text-align:center;
+	cursor: -webkit-zoom-in;
+}
+
+.project-meta .project-clients .client-list .client-hover-window{
+	display:none;
+	position: absolute;
+    background: #f2f2f2 none repeat scroll 0 0;
+    color: #355ac7;
+}
+
+.project-meta .project-clients .client-list ._hide {
+	float: right;
+    color: #c76666;
+    padding: 0 7px;
+    background: #ddd;
+    cursor: pointer;
+}
+
+.project-meta .project-clients .client-list ._userdata {
+    padding: 8px 20px 8px 10px;
+    font-size: 15px;
+}
+
+.project-meta .project-clients .client-list ._userdata._userremove {
+    background: #c76666;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+
+.project-meta .project-clients .client-list .client.add,
+.project-meta .project-clients .client-list .client.close-search-window {
+  cursor: pointer;
+  text-align:center;
+}
+
+
+.project-meta .project-clients .client-list .search-client {
+  background: #f2f2f2 none repeat scroll 0 0;
+  display: none;
+  padding: 10px;
+  position: absolute;
+}
+.project-meta .project-clients .client-list .client-result{}
+.project-meta .project-clients .client-list .client-result .name {
+    font-size: 13px;
+    background: #fff;
+    padding: 5px;
+    color: #929292;
+    margin-bottom: 2px;
+	text-align:left;
+}
+
+.project-meta .project-clients .client-list .client-result .name span {
+    vertical-align:top;
+}
+
+.project-meta .project-clients .client-list .client-result .name:hover {
+    background: #4d76ab;
+    color: #fff;
+}
+
+
+.project-meta .project-clients .client-list .client img {
+  height: auto;
+}
+

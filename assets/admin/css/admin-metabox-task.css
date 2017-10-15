@@ -1,0 +1,373 @@
+/*
+	Admin Metabox css
+*/
+
+#task_metabox { margin-top: -20px; }
+
+
+
+.type-task .pm_running {
+    background: #826ECC;
+    padding: 0px 20px 3px 20px;
+    display: inline-block;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.type-task .pm_default {
+    background: #16A05C;
+    padding: 0px 20px 3px 20px;
+    display: inline-block;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+
+.wp-list-table .type-task:hover .pm_running,
+.wp-list-table .type-task:hover .pm_default{
+    background: #ce660b;
+}
+
+
+.task-meta{}
+
+.task-meta .full {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  width: 100%;
+}
+
+.task-meta .inner {
+	padding: 7px 20px;
+}
+
+.task-meta .half {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  width: 49%;
+}
+
+/* post title */
+
+.task-meta .edit-post-title,
+.task-meta .edit-post-content {
+    border: 1px solid #ddd;
+    color: #ddd;
+    font-size: 18px;
+    padding: 0px 7px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.task-meta .post_title, 
+.task-meta .post_title{
+	width: 100%;
+	display: none;
+}
+
+
+.task-meta .post_content,
+.task-meta .post_content{
+	display: none;
+	margin-top: 15px;
+	width: 100%;
+}
+
+
+.task-meta .task-details{
+  display: block;
+  margin: 15px 0 0;
+	}
+
+
+.task-meta .meta {
+  display: inline-block;
+  margin: 0 20px 20px 0;
+  vertical-align: top;
+}
+
+.task-meta .project-admins{}
+
+.task-meta .meta .title {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+
+
+.task-meta .task-details{}
+
+
+.task-meta .meta {
+  display: inline-block;
+  margin: 0 20px 20px 0;
+  vertical-align: top;
+}
+
+
+.task-meta .meta .title {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+
+
+.task-meta .project-name{}
+
+.task-meta .project-name .select2-container{
+	width:280px;
+	min-width:280px;
+}	
+
+
+
+
+
+
+
+.task-meta .task-worker{}
+
+.task-meta .worker-list .worker {
+	border: 1px solid #ddd;
+	color: #ddd;
+	display: inline-block;
+	font-size: 22px;
+	height: 30px;
+	line-height: normal;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	text-align: center;
+	width: 30px;
+}
+
+
+.task-meta .worker-list  .worker.add,
+.task-meta .worker-list .worker.close-search-window {
+  cursor: pointer;
+  text-align:center;
+}
+
+.task-meta .worker-list .add .search-worker {
+	background: #f2f2f2 none repeat scroll 0 0;
+	display: none;
+	padding: 10px;
+	position: absolute;
+}
+
+.task-meta .worker-list .worker-result{}
+.task-meta .worker-list .worker-result .name {
+    font-size: 13px;
+    background: #fff;
+    padding: 5px;
+    color: #929292;
+    margin-bottom: 2px;
+	text-align:left;
+}
+
+.task-meta .worker-list .worker-result .name span {
+    vertical-align:top;
+}
+
+.task-meta .worker-list .worker-result .name:hover {
+    background: #4d76ab;
+    color: #fff;
+}
+
+
+
+.task-meta .worker-list .worker-hover-window{
+	display:none;
+	position: absolute;
+    background: #f2f2f2 none repeat scroll 0 0;
+    color: #355ac7;
+}
+
+.task-meta .worker-list ._hide {
+	float: right;
+    color: #c76666;
+    padding: 0 7px;
+    background: #ddd;
+    cursor: pointer;
+}
+
+.task-meta .worker-list ._userdata {
+    padding: 8px 20px 8px 10px;
+    font-size: 15px;
+}
+
+.task-meta .worker-list ._userdata._userremove {
+    background: #c76666;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* 
+.task-meta .task-clients .worker-list .worker.add,
+.task-meta .task-clients .worker-list .worker.close-search-window {
+  cursor: pointer;
+  text-align:center;
+}
+
+
+.task-meta .task-clients .worker-list .search-client {
+  background: #f2f2f2 none repeat scroll 0 0;
+  display: none;
+  padding: 10px;
+  position: absolute;
+}
+.task-meta .task-clients .worker-list .worker-result{}
+.task-meta .task-clients .worker-list .worker-result .name {
+    font-size: 13px;
+    background: #fff;
+    padding: 5px;
+    color: #929292;
+    margin-bottom: 2px;
+	text-align:left;
+}
+
+.task-meta .task-clients .worker-list .worker-result .name span {
+    vertical-align:top;
+}
+
+.task-meta .task-clients .worker-list .worker-result .name:hover {
+    background: #4d76ab;
+    color: #fff;
+}
+
+
+.task-meta .task-clients .worker-list .worker img {
+  height: auto;
+}
+
+ */
+
+
+.task-meta .report{}
+
+.task-meta .report .meta {
+	text-align: center;
+	background: #f2f2f2;
+	padding: 5px 10px;
+}
+
+
+.task-meta .to-do-list{}
+
+.task-meta .to-do-list .to-do {
+	border-bottom: 1px solid #ddd;
+}
+
+.task-meta .to-do-list .to-do:hover {
+	background-color: #f1f1f1;
+}
+
+
+.task-meta .to-do-list .to-do .title{
+  font-size: 14px;
+  font-weight: bold;
+  margin: 10px 0;
+	}
+.task-meta .to-do-list .to-do .details{}
+
+
+.task-meta .to-do-list .to-do .meta {
+  display: inline-block;
+  margin-right: 20px;
+  vertical-align: top;
+}
+
+.task-meta .to-do-list .to-do .task-user{}
+.task-meta .to-do-list .to-do .task-user .user {
+  display: inline-block;
+}
+
+.task-meta .to-do-list .user-list .user {
+  display: inline-block;
+  margin: 0 1px;
+}
+
+
+.task-meta .task-comment .comment-input {
+	margin-bottom: 30px;
+}
+.task-meta .task-comment .comment-input textarea{
+	border-radius:3px;
+}
+.task-meta .task-comment .comment-input .comment-content {
+	width: 100%;
+}
+.task-meta .task-comment .comment-input .add-comment {
+  margin-top: 20px;
+}
+
+.task-meta .task-comment .comment-input .comment-loading-icon{
+	display:none;
+    position: relative;
+    top: 23px;
+    left: 10px;
+    font-size: 20px;
+    color: #a7a6a6;
+}
+
+
+.task-meta .task-comment .comment {
+	border-bottom: 1px solid #ddd;
+	padding: 10px 0;
+}
+
+.task-meta .task-comment .comment-list{
+	overflow-y: scroll; 
+	height:400px;
+}
+
+.task-meta .task-comment .comment{}
+
+.task-meta .task-comment .comment .thumb {
+  border-radius: 20px;
+  display: inline-block;
+  float: left;
+  height: 40px;
+  margin-right: 20px;
+  overflow: hidden;
+  width: 40px;
+}
+
+.task-meta .task-comment .comment .details{
+	margin-left:50px;
+}
+
+.task-meta .task-comment .comment .name {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-right:10px;
+}
+.task-meta .task-comment .comment .date {
+	display: inline-block;
+	font-size: 12px;
+}
+
+.task-meta .task-comment .comment .content { }
+.task-meta .task-comment .comment .content p{ margin:0; }
+
+/* Error Handling Design */
+
+.pm_error_message {
+	padding: 10px 0;
+	color:red;
+}
+
+.error-field { 
+	outline: none !important;
+	border:1px solid red;
+}

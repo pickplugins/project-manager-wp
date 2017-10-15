@@ -1,0 +1,69 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.pm-notify {
+  float: right;
+  position: relative;
+}
+
+.pm-notify .notify-button {
+  background: #ddd none repeat scroll 0 0;
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 12px;
+  position: relative;
+}
+
+.pm-notify .notify-count {
+  background: #ff3b00 none repeat scroll 0 0;
+  border-radius: 7px;
+  color: #fff;
+  cursor: pointer;
+  padding: 5px 6px;
+  position: absolute;
+  right: -10px;
+  top: -10px;
+}
+
+.pm-notify .notify-reload {
+  background: #ff3b00 none repeat scroll 0 0;
+  border-radius: 7px;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+  left: -10px;
+  padding: 5px 6px;
+  position: absolute;
+  top: -10px;
+}
+
+.pm-notify .notify-list {
+  background: #fff none repeat scroll 0 0;
+  box-shadow: 0 6px 4px 2px rgba(0, 0, 0, 0.1);
+  display: none;
+  position: absolute;
+  right: 0;
+  text-align: left;
+  width: 350px;
+}
+
+.pm-notify:hover .notify-list {
+  display: block;
+}
+
+.pm-notify .item {
+  border-bottom: 1px solid #ddd;
+  border-left: 3px solid #fff;
+  font-size: 12px;
+  line-height: normal;
+  padding: 10px 15px;
+}
+
+.pm-notify .item.read {
+  border-left: 3px solid #0dbbff;
+}
+.pm-notify .item:hover {
+  background: rgba(221, 221, 221, 0.44) none repeat scroll 0 0;
+  cursor: pointer;
+}

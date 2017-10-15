@@ -1,0 +1,370 @@
+/*
+	Admin Metabox css
+*/
+
+#attendance_metabox { margin-top: -20px; }
+
+
+
+.type-attendance .pm_running {
+    background: #826ECC;
+    padding: 0px 20px 3px 20px;
+    display: inline-block;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.type-attendance .pm_default {
+    background: #16A05C;
+    padding: 0px 20px 3px 20px;
+    display: inline-block;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+
+.wp-list-table .type-attendance:hover .pm_running,
+.wp-list-table .type-attendance:hover .pm_default{
+    background: #ce660b;
+}
+
+
+
+.attendance-meta{}
+
+.attendance-meta .full {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  width: 100%;
+}
+
+.attendance-meta .inner {
+	padding: 7px 20px;
+}
+
+.attendance-meta .half {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  width: 49%;
+}
+
+/* post title */
+
+.attendance-meta .edit-post-title,
+.attendance-meta .edit-post-content {
+    border: 1px solid #ddd;
+    color: #ddd;
+    font-size: 18px;
+    padding: 0px 7px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.attendance-meta .post_title, 
+.attendance-meta .post_title{
+	width: 100%;
+	display: none;
+}
+
+
+.attendance-meta .post_content,
+.attendance-meta .post_content{
+	display: none;
+	margin-top: 15px;
+	width: 100%;
+}
+
+.attendance-meta .todo-details{
+  display: block;
+  margin: 15px 0 0;
+	}
+
+
+.attendance-meta .meta {
+  display: inline-block;
+  margin: 0 20px 20px 0;
+  vertical-align: top;
+}
+
+.attendance-meta .meta .title {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.attendance-meta .meta {
+  display: inline-block;
+  margin: 0 20px 20px 0;
+  vertical-align: top;
+}
+
+
+.attendance-meta .meta .title {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.attendance-meta .task-name .select2-container{
+	width:280px;
+	min-width:280px;
+}	
+
+
+
+
+
+
+
+.attendance-meta .attendance-worker{}
+
+.attendance-meta .worker-list .worker {
+	border: 1px solid #ddd;
+	color: #ddd;
+	display: inline-block;
+	font-size: 22px;
+	height: 30px;
+	line-height: normal;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	text-align: center;
+	width: 30px;
+}
+
+
+.attendance-meta .worker-list  .worker.add,
+.attendance-meta .worker-list .worker.close-search-window {
+  cursor: pointer;
+  text-align:center;
+}
+
+.attendance-meta .worker-list .add .search-worker {
+	background: #f2f2f2 none repeat scroll 0 0;
+	display: none;
+	padding: 10px;
+	position: absolute;
+}
+
+.attendance-meta .worker-list .worker-result{}
+.attendance-meta .worker-list .worker-result .name {
+    font-size: 13px;
+    background: #fff;
+    padding: 5px;
+    color: #929292;
+    margin-bottom: 2px;
+	text-align:left;
+}
+
+.attendance-meta .worker-list .worker-result .name span {
+    vertical-align:top;
+}
+
+.attendance-meta .worker-list .worker-result .name:hover {
+    background: #4d76ab;
+    color: #fff;
+}
+
+
+
+.attendance-meta .worker-list .worker-hover-window{
+	display:none;
+	position: absolute;
+    background: #f2f2f2 none repeat scroll 0 0;
+    color: #355ac7;
+}
+
+.attendance-meta .worker-list ._hide {
+	float: right;
+    color: #c76666;
+    padding: 0 7px;
+    background: #ddd;
+    cursor: pointer;
+}
+
+.attendance-meta .worker-list ._userdata {
+    padding: 8px 20px 8px 10px;
+    font-size: 15px;
+}
+
+.attendance-meta .worker-list ._userdata._userremove {
+    background: #c76666;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+
+
+.attendance-meta .todo-progress {
+    
+}
+
+.attendance-meta .todo-progress .add-progress{}
+.attendance-meta .todo-progress .close-progress{ display:none;}
+
+
+
+.attendance-meta .todo-progress .progress-input{
+    display:none;
+	padding: 20px 5px;
+    margin: 10px 0;
+	padding:20px;
+	background:#eee;
+}
+
+.attendance-meta .todo-progress .button{
+	margin-top:15px;
+}
+
+.attendance-meta .todo-progress .submit-progress-status{
+    padding: 18px;
+    font-size: 25px;
+    color: #a7a5a5;
+	display:none;
+}
+
+
+.attendance-meta .todo-progress .progress-list { 
+    overflow-y: scroll;
+    height: 400px;
+}
+
+
+.attendance-meta .todo-progress .progress-single { 
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.attendance-meta .todo-progress .progress-single:hover .progress-edit{ 
+	display:inline-block;
+}
+
+
+.attendance-meta .todo-progress .progress-edit { 
+	float: right;
+	margin-right: 20px;
+	color: #C13C31;
+	text-decoration:none;
+	box-shadow:none;
+	outline:none;
+	display:none;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+
+
+
+
+
+
+.attendance-meta .todo-progress .progress-single .thumb{ 
+    border-radius: 20px;
+    display: inline-block;
+    float: left;
+    height: 40px;
+    margin-right: 20px;
+    overflow: hidden;
+    width: 40px;
+}
+
+.attendance-meta .todo-progress .progress-single .details{ 
+	margin-left:50px;
+}
+
+
+.attendance-meta .todo-progress .progress-single .author{
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.attendance-meta .todo-progress .progress-single .date{
+	display: inline-block;
+    font-size: 12px;
+}
+
+
+
+.attendance-meta .todo-progress .progress-single .progress-content{
+	padding:10px;
+}
+
+
+.attendance-meta .user-list{}
+
+.attendance-meta .user-list .user {
+    background: rgba(221, 221, 221, 0.61) none repeat scroll 0 0;
+    cursor: pointer;
+    display: inline-block;
+    height: 50px;
+    margin: 5px;
+    padding: 3px;
+    position: relative;
+    width: 70px;
+}
+.attendance-meta .user-list .user:hover .hover {
+    display: inline-block;
+    transition: all 0.5s ease 0s;
+
+}
+
+.attendance-meta .user-list .user .late{
+
+}
+
+.attendance-meta .user-list .user .is-present {
+    color: #fff;
+    font-size: 18px;
+    padding: 1px 4px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.attendance-meta .user-list .user .is-present.yes {
+    background: #22ae58 none repeat scroll 0 0;
+}
+.attendance-meta .user-list .user .is-present.no {
+    background: #f00 none repeat scroll 0 0;
+}
+
+.attendance-meta .user-list .user .hover {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.12);
+    display: none;
+    left: 0;
+    padding: 10px;
+    position: absolute;
+    top: 50px;
+    width: 250px;
+    z-index: 999;
+}
+
+.attendance-meta .user-list .user .is-late {
+    background: #ffd11f none repeat scroll 0 0;
+    bottom: 0;
+    color: #fff;
+    font-size: 18px;
+    padding: 1px 4px;
+    position: absolute;
+    right: 0;
+}
+.attendance-meta .user-list .alternate {
+    background: rgba(221, 221, 221, 0.31) none repeat scroll 0 0;
+}
+.attendance-meta .user-list .weekend, .attendance-meta .user-list .offday {
+    background: rgba(254, 204, 46, 0.5) none repeat scroll 0 0;
+    border-bottom: 1px solid #0b0b0b;
+}

@@ -1,0 +1,93 @@
+@charset "utf-8";
+/* CSS Document */
+
+.single-project {
+	margin: 0px;
+}
+
+.single-project .full{
+    width: 100%;
+}
+
+.single-project .half {
+    display: inline-block;
+    vertical-align: top;
+    width: 49%;
+}
+
+.single-project .meta {
+    display: inline-block;
+    margin: 0 20px 20px 0;
+    vertical-align: top;
+}
+
+.single-project .task-status .status{
+    background: rgba(221, 221, 221, 0.44) none repeat scroll 0 0;
+    border-radius: 3px;
+    display: inline-block;
+    font-size: 12px;
+    padding: 5px 15px;
+}
+.single-project .task-status .status.running {
+    background: #37b3ff none repeat scroll 0 0;
+    color: #fff;
+}
+.single-project .task-status .status.hold {
+    background: #edc400 none repeat scroll 0 0;
+    color: #fff;
+}
+.single-project .task-status .status.completed {
+    background: #0cad6a none repeat scroll 0 0;
+    color: #fff;
+}
+.single-project .task-status .status.none {
+    background: #9da9a4 none repeat scroll 0 0;
+    color: #fff;
+}
+
+
+
+
+.single-project .project-action{}
+
+.single-project .project-action .meta{}
+.single-project .project-action .meta .title {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.single-project .report .meta {
+    background: #f2f2f2 none repeat scroll 0 0;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+
+.single-project .task-list .task {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.single-project .paginate{
+    margin: 30px 0;
+    text-align: center;
+}
+
+.single-project .paginate .page-numbers{
+    background: #f2f2f2 none repeat scroll 0 0;
+    margin: 0 2px;
+    padding: 9px 15px;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+

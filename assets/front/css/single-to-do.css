@@ -1,0 +1,287 @@
+@charset "utf-8";
+/* CSS Document */
+
+.single-to-do {
+	margin: 0px;
+}
+
+.single-to-do .full{
+    width: 100%;
+}
+
+.single-to-do .half {
+    display: inline-block;
+    vertical-align: top;
+    width: 49%;
+}
+.single-to-do .to-do-action .meta .title {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+.single-to-do .meta {
+    display: inline-block;
+    margin: 0 20px 20px 0;
+    vertical-align: top;
+}
+
+
+
+.single-to-do .to-do-status .status{
+    background: rgba(221, 221, 221, 0.44) none repeat scroll 0 0;
+    border-radius: 3px;
+    display: inline-block;
+    font-size: 12px;
+    padding: 5px 15px;
+}
+.single-to-do .to-do-status .status.running {
+    background: #37b3ff none repeat scroll 0 0;
+    color: #fff;
+}
+.single-to-do .to-do-status .status.hold {
+    background: #edc400 none repeat scroll 0 0;
+    color: #fff;
+}
+.single-to-do .to-do-status .status.completed {
+    background: #0cad6a none repeat scroll 0 0;
+    color: #fff;
+}
+.single-to-do .to-do-status .status.none {
+    background: #9da9a4 none repeat scroll 0 0;
+    color: #fff;
+}
+
+.single-to-do .take-over {
+    background: #2b8fff;
+    padding: 3px 13px;
+    color: #fff !important;
+    border-radius: 3px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+
+
+
+
+.single-to-do .worker-list{}
+
+.single-to-do .worker-list .worker {
+    display: inline-block;
+    margin: 2px;
+}
+
+.single-to-do .report .meta {
+    background: #f2f2f2 none repeat scroll 0 0;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+
+
+
+.single-to-do .to-do-list .to-do {
+    border-bottom: 1px solid #ddd;
+}
+
+.single-to-do .paginate{
+    margin: 30px 0;
+    text-align: center;
+}
+
+.single-to-do .paginate .page-numbers{
+    background: #f2f2f2 none repeat scroll 0 0;
+    margin: 0 2px;
+    padding: 9px 15px;
+    text-decoration: none;
+}
+
+
+
+
+.single-to-do .submission{}
+
+.single-to-do .submission .add-version {
+    background: rgba(19, 179, 112, 0.93) none repeat scroll 0 0;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    padding: 5px 15px;
+}
+
+.single-to-do  .notify-messege {
+  background: rgba(221, 221, 221, 0.61) none repeat scroll 0 0;
+  border-left: 3px solid #00c0ff;
+  margin-bottom: 30px;
+  padding: 3px 10px;
+}
+
+
+
+.single-to-do .submission .list-item {
+    margin: 15px 0;
+}
+
+.single-to-do .submission .list-item .item{
+
+}
+
+.single-to-do .submission .list-item .item-header {
+    background: rgba(221, 221, 221, 0.61) none repeat scroll 0 0;
+    cursor: pointer;
+    margin: 5px 0 0;
+    padding: 5px 10px;
+}
+
+.single-to-do .submission .list-item .item-header .datetime, .single-to-do .submission .list-item .item-header .user {
+  float: right;
+  font-size: 12px;
+  margin-right: 10px;
+}
+.single-to-do .submission .list-item .item-header .user{
+
+}
+
+.single-to-do .submission .list-item .remove {
+  background: #ff4b1e none repeat scroll 0 0;
+  color: #fff;
+  cursor: pointer;
+  float: right;
+  margin: 0 10px 0 0;
+  padding: 2px 7px;
+}
+
+
+.single-to-do .submission .list-item .item-details {
+    background: rgba(221, 221, 221, 0.29) none repeat scroll 0 0;
+    display: none;
+    padding: 15px;
+}
+
+.single-to-do .submission .list-item .active .item-details {
+    display: block;
+}
+
+
+
+.single-to-do .submission .files{}
+.single-to-do .submission .files .add-file {
+    background: rgba(19, 179, 112, 0.93) none repeat scroll 0 0;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    padding: 5px 15px;
+}
+
+.single-to-do .submission .files .file-list {
+    margin-top: 15px;
+}
+.single-to-do .submission .files .file {
+    margin: 10px 0;
+}
+.single-to-do .submission .files .file .remove {
+  background: #ff4b1e none repeat scroll 0 0;
+  color: #fff;
+  cursor: pointer;
+  float: none;
+  margin: 0 12px 0 0;
+  padding: 5px 10px;
+}
+
+
+
+
+
+
+
+
+.single-to-do .submission .check-list {
+    margin: 15px 0;
+}
+
+.single-to-do .submission .check-list .add-checklist {
+    background: rgba(19, 179, 112, 0.93) none repeat scroll 0 0;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    padding: 5px 15px;
+}
+
+
+.single-to-do .submission .check-list .item{
+
+}
+
+.single-to-do .submission .check-list .item-header {
+    background: rgba(221, 221, 221, 0.61) none repeat scroll 0 0;
+    cursor: pointer;
+    margin: 5px 0 0;
+    padding: 5px 10px;
+}
+
+.single-to-do .submission .check-list .item-header .datetime, .single-to-do .submission .check-list .item-header .user {
+    float: right;
+    font-size: 12px;
+    margin-right: 10px;
+}
+.single-to-do .submission .check-list .item-header .user{
+
+}
+
+.single-to-do .submission .check-list .remove {
+    background: #ff4b1e none repeat scroll 0 0;
+    color: #fff;
+    cursor: pointer;
+    float: right;
+    margin: 0 10px 0 0;
+    padding: 2px 7px;
+}
+
+
+.single-to-do .submission .check-list .item-details {
+    background: rgba(221, 221, 221, 0.29) none repeat scroll 0 0;
+    display: none;
+    padding: 15px;
+}
+
+.single-to-do .submission .check-list .active .item-details {
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

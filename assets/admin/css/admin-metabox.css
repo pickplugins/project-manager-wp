@@ -1,0 +1,240 @@
+/*
+	Admin Metabox css
+*/
+
+@import url('admin-metabox-clients.css');
+
+/* @import url('admin-metabox-tasks.css'); */
+
+
+#project_metabox { margin-top: -20px; }
+
+.project-meta{}
+
+.project-meta .full {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  width: 100%;
+}
+
+.project-meta .inner {
+  padding: 20px;
+}
+
+.project-meta .half {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  width: 49%;
+}
+ 
+ 
+/* post title */
+
+.project-meta .edit-post-title,
+.project-meta .edit-post-content {
+    border: 1px solid #ddd;
+    color: #ddd;
+    font-size: 18px;
+    padding: 0px 7px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.project-meta .post_title, 
+.task-meta .post_title{
+	width: 100%;
+	display: none;
+}
+
+
+.project-meta .post_content,
+.task-meta .post_content{
+	display: none;
+	margin-top: 15px;
+	width: 100%;
+}
+
+
+.project-meta .project-details {
+  display: block;
+  margin: 15px 0 0;
+}
+
+
+.project-meta .meta {
+  display: inline-block;
+  margin: 0 20px 20px 0;
+  vertical-align: top;
+}
+
+.project-meta .project-admins{}
+
+.project-meta .meta .title {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+
+
+
+.project-meta .project-admins .admin-list{}
+
+	
+.project-meta .project-admins .admin-list .user{
+  border: 1px solid #ddd;
+  color: #ddd;
+  display: inline-block;
+  font-size: 22px;
+  height: 30px;
+  line-height: normal;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  width: 30px;
+    text-align:center;
+}
+
+.project-meta .project-admins .admin-list .user-hover-window{
+	display:none;
+	position: absolute;
+    background: #f2f2f2 none repeat scroll 0 0;
+    color: #355ac7;
+}
+
+.project-meta .project-admins .admin-list ._hide {
+	float: right;
+    color: #c76666;
+    padding: 0 7px;
+    background: #ddd;
+    cursor: pointer;
+}
+
+.project-meta .project-admins .admin-list ._userdata {
+    padding: 8px 20px 8px 10px;
+    font-size: 15px;
+}
+
+.project-meta .project-admins .admin-list ._userdata._userremove {
+    background: #c76666;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+
+.project-meta .project-admins .admin-list .user.add,
+.project-meta .project-admins .admin-list .user.close-search-window {
+  cursor: pointer;
+  text-align:center;
+}
+
+
+.project-meta .project-admins .admin-list .add .search-user {
+  background: #f2f2f2 none repeat scroll 0 0;
+  display: none;
+  padding: 10px;
+  position: absolute;
+}
+.project-meta .project-admins .admin-list .user-result{}
+.project-meta .project-admins .admin-list .user-result .name {
+    font-size: 13px;
+    background: #fff;
+    padding: 5px;
+    color: #929292;
+    margin-bottom: 2px;
+	text-align:left;
+}
+
+.project-meta .project-admins .admin-list .user-result .name span {
+    vertical-align:top;
+}
+
+.project-meta .project-admins .admin-list .user-result .name:hover {
+    background: #4d76ab;
+    color: #fff;
+}
+
+
+.project-meta .project-admins .admin-list .user img {
+	height: auto;
+	cursor:pointer;
+}
+
+
+
+	
+
+
+
+
+
+
+/* deadline meta */
+
+.project-meta .project-deadline .deadline{ 
+
+}
+
+
+
+
+
+
+
+
+
+.project-meta .report{}
+
+.project-meta .report .meta {
+	text-align: center;
+	background: #f2f2f2;
+	padding: 5px 10px;
+}
+
+
+
+
+
+
+.project-meta .task-list{}
+
+.project-meta .task-list .task {
+	border-bottom: 1px solid #ddd;
+}
+
+.project-meta .task-list .task:hover {
+	background: #f1f1f1;
+}
+
+
+.project-meta .task-list .task .title{
+  font-size: 14px;
+  font-weight: bold;
+  margin: 10px 0;
+	}
+.project-meta .task-list .task .details{}
+
+
+.project-meta .task .meta {
+  display: inline-block;
+  margin-right: 20px;
+  vertical-align: top;
+}
+
+.project-meta .task .task-user{}
+.project-meta .task .task-user .user {
+  display: inline-block;
+}
+
+
+
+
+
+
+
+
