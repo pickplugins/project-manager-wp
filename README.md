@@ -21,3 +21,11 @@ Display task list with pagination.
 Display to-do list with pagination.
 
 ```[to_do_archive]```
+
+# Screenshot
+
+**Attendance**
+[![Attendance](https://i.imgur.com/Pv15BdF.png)](https://i.imgur.com/Pv15BdF.png)
+
+**To-Do archive**
+[![Attendance](https://i.imgur.com/jCiOP6M.png)](https://i.imgur.com/jCiOP6M.png)
