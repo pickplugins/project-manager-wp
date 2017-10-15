@@ -5,19 +5,19 @@ WordPress plugin to manage project in a beautiful way, create project asign admi
 
 **Attendance**
 
-[pm_attendance]
+```[pm_attendance]```
 
 **Project archive**
 Display list of projects with pagination.
 
-[project_archive]
+```[project_archive]```
 
 **Task archive**
 Display task list with pagination.
 
-[task_archive]
+```[task_archive]```
 
 **To-Do archive**
 Display to-do list with pagination.
 
-[to_do_archive]
+```[to_do_archive]```
