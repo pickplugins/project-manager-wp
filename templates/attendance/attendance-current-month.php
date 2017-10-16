@@ -88,7 +88,7 @@ $start_time 	= strtotime( $start_hour );
 
 $start_hour 	= new DateTime($start_hour );
 $start_hour_display = $start_hour->format('h:i A');
-
+//echo '<pre>'.var_export($start_hour, true).'</pre>';
 
 
 $late_hour 	= get_post_meta( $post_id, 'late_hour', true );
@@ -356,25 +356,36 @@ if(!is_user_logged_in()){
                                 $minute_spend = 0;
                                 $second_spend = 0;
 
+
                                 if(!empty($login)){
 
                                     $start_date = new DateTime($year.'-'.$month.'-'.$i.' '.$login);
-                                    //echo '<pre>'.var_export($year.'-'.$month.'-'.$i.' '.$login, true).'</pre>';
-                                    //echo '<pre>'.var_export($year.'-'.$month.'-'.$i.' '.$logout, true).'</pre>';
                                     $since_start = $start_date->diff(new DateTime($year.'-'.$month.'-'.$i.' '.$logout));
+
+
+
+	                                $login_date_late = new DateTime($start_hour->format('Y-m-d h:i A'));
+	                                $since_late = $login_date_late->diff(new DateTime($year.'-'.$month.'-'.$i.' '.$login));
+
 
 
                                     $hour_spend = $since_start->h;
                                     $minute_spend = $since_start->i;
                                     $second_spend = $since_start->s;
+
                                     //$hour_spend = date('H:i', mktime(0, $minute_spend));
 
                                     //$user_time_spend_data[$i][$user_id] = $hour_spend.':'.$minute_spend;
 
-                                   $user_time_spend_hour[$user_id] +=$hour_spend;
-                                   $user_time_spend_minute[$user_id] +=$minute_spend;
-                                   $user_time_spend_second[$user_id] +=$second_spend;
-                                    //echo '<pre>'.var_export($hour_spend, true).'</pre>';
+                                    $user_time_spend_hour[$user_id] +=$hour_spend;
+                                    $user_time_spend_minute[$user_id] +=$minute_spend;
+                                    $user_time_spend_second[$user_id] +=$second_spend;
+
+
+
+
+
+                                    //echo '<pre>'.var_export($minute_late, true).'</pre>';
                                 }
 
 
@@ -428,6 +439,10 @@ if(!is_user_logged_in()){
 
                                         if($is_present=='yes' && $login_delay<0 ){
 
+	                                        $user_late_time = date("H:i:s", absint($login_delay));
+	                                        $user_late_time_array[$user_id][$i] = strtotime($user_late_time);
+
+
                                             ?>
                                             <div class="is-late">
                                             <i title="Late <?php echo date("H:i:s", absint($login_delay)); ?>" class="fa fa-clock-o" aria-hidden="true"></i>
@@ -470,6 +485,16 @@ if(!is_user_logged_in()){
 
 
 
+                                    <?php
+                                    if($is_present=='yes' && $login_delay<0 ) {
+
+	                                    $user_late_time = date( "H:i:s", absint( $login_delay ) );
+	                                    $user_late_time_array[ $user_id ][ $i ] = strtotime( $user_late_time );
+
+                                    }
+
+
+                                    ?>
 
 
 
@@ -477,7 +502,19 @@ if(!is_user_logged_in()){
                                         <div class="name"><?php echo $display_name; ?></div>
                                         <div class="intime">Login time: <?php echo $login; ?></div>
                                         <div class="outtime">Logout time: <?php echo $logout; ?></div>
-                                        <div class="outtime">Late time: <?php echo date("H:i:s", absint($login_delay)); ?></div>
+	                                    <?php if($login_delay<0) {
+		                                    ?>
+                                            <div class="outtime">Late time: <?php echo date("H:i:s", absint($login_delay)); ?></div>
+		                                    <?php
+                                        }
+	                                    else {
+		                                    ?>
+                                            <div class="outtime">Early time: <?php echo date("H:i:s", absint($login_delay)); ?></div>
+		                                    <?php
+
+                                            } ?>
+
+
                                         <div class="spend-hour">Spend time: <?php echo $hour_spend.':'.$minute_spend.':'.$second_spend; ?></div>
 										<div class="ip">IP: <?php echo $ip; ?></div>
                                         <div class="lunch">Lunch: <?php if($lunch=='yes') echo 'Yes'; else echo 'No' ?></div>
@@ -565,18 +602,32 @@ if(!is_user_logged_in()){
         <?php
 
 
+        //echo '<pre>'.var_export($user_late_time_array, true).'</pre>';
+
+
+        foreach ($user_late_time_array as $late_user_id=>$late_time){
+
+            foreach ($late_time as $late_count){
+	            //echo $late_count;
+	            $user_total_late[$late_user_id] += ($late_count- strtotime('00:00:00'));
+            }
 
 
 
+        }
+
+        //echo '<pre>'.var_export($user_total_late, true).'</pre>';
+
+        foreach ($user_total_late as $late_user_id=>$late_count){
+
+	        $user_total_late_user_id[$late_user_id] = date('H:i:s', $late_count);
+
+	        //echo $late_user_id.' - '.date('H:i:s', $late_count).'<br>';
+        }
 
 
 
-
-
-
-        //echo '<pre>'.var_export($user_time_spend_hour, true).'</pre>';
-
-        //echo '<pre>'.var_export($user_time_spend_minute, true).'</pre>';
+        //echo '<pre>'.var_export($user_total_late, true).'</pre>';
 
          ?>
         <br>
@@ -586,7 +637,7 @@ if(!is_user_logged_in()){
             <tr class="thead">
                 <th colspan="">User</th>
                 <th colspan="">Total Time</th>
-                <th colspan="">Avg.</th>
+                <th colspan="">Total Late.</th>
 
             </tr>
             </thead>
@@ -624,8 +675,8 @@ if(!is_user_logged_in()){
                 <tr class="thead">
                     <td colspan=""><?php echo $display_name; ?></td>
                     <td colspan=""><?php echo $user_hour+$user_offset_hour.':'.$user_minute_remin.':'.$user_second_remin; ?></td>
-                    <td colspan=""><?php //echo $user_minute_remin; ?></td>
 
+                    <td colspan=""><?php if(isset($user_total_late_user_id[$user_id])) echo $user_total_late_user_id[$user_id]; else echo '00:00:00'; ?></td>
                 </tr>
 
                 <?php
