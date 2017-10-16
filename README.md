@@ -28,4 +28,4 @@ Display to-do list with pagination.
 [![Attendance](https://i.imgur.com/Pv15BdF.png)](https://i.imgur.com/Pv15BdF.png)
 
 **To-Do archive**
-[![Attendance](https://i.imgur.com/jCiOP6M.png)](https://i.imgur.com/jCiOP6M.png)
+[![To-Do](https://i.imgur.com/jCiOP6M.png)](https://i.imgur.com/jCiOP6M.png)

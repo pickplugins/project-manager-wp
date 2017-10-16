@@ -68,7 +68,7 @@ else{
 	
 	update_post_meta($post_id,'month',  $current_month);
 	update_post_meta($post_id,'year',  $current_year);
-	update_post_meta($post_id,'start_hour',  10);	
+	update_post_meta($post_id,'late_hour',  10);
 	update_post_meta($post_id,'weekend_days',  'Fri,Sat');
 	update_post_meta($post_id,'off_days',  '');	
 
@@ -81,8 +81,25 @@ else{
 
 $month 	= get_post_meta( $post_id, 'month', true );
 $year 	= get_post_meta( $post_id, 'year', true );
+
 $start_hour 	= get_post_meta( $post_id, 'start_hour', true );
 $start_time 	= strtotime( $start_hour );
+
+
+$start_hour 	= new DateTime($start_hour );
+$start_hour_display = $start_hour->format('h:i A');
+
+
+
+$late_hour 	= get_post_meta( $post_id, 'late_hour', true );
+$late_hour 	= new DateTime($late_hour );
+$late_hour_display = $late_hour->format('h:i A');
+
+$end_hour 	= get_post_meta( $post_id, 'end_hour', true );
+$end_hour 	= new DateTime($end_hour );
+$end_hour_display = $end_hour->format('h:i A');
+
+//echo '<pre>'.var_export($end_hour, true).'</pre>';
 
 $weekend_days 	= get_post_meta( $post_id, 'weekend_days', true );
 $weekend_days_array = explode(',',$weekend_days);
@@ -105,7 +122,7 @@ if(!is_user_logged_in()){
 }
 
 
-//echo '<pre>'.var_export($start_hour, true).'</pre>';
+//echo '<pre>'.var_export($late_hour, true).'</pre>';
 ?>
 <div class="pm-attendance">
 
@@ -113,19 +130,19 @@ if(!is_user_logged_in()){
 	
 		<div class="start-time item">
 			<span class="title">Start time</span>		
-			<span class="time">10.00AM</span>
+			<span class="time"><?php echo $start_hour_display; ?></span>
 		
 		</div>
 		
 		<div class="late-time item">
 			<span class="title">Late time</span>	
-			<span class="time">10.15AM</span>
+			<span class="time"><?php echo $late_hour_display; ?></span>
 		
 		</div>
 
 		<div class="end-time item">
 			<span class="title">End time</span>
-			<span class="time">05.00PM</span>
+			<span class="time"><?php echo $end_hour_display; ?></span>
 		
 		</div>		
 	
@@ -354,9 +371,9 @@ if(!is_user_logged_in()){
 
                                     //$user_time_spend_data[$i][$user_id] = $hour_spend.':'.$minute_spend;
 
-                                   // $user_time_spend_hour[$user_id] +=$hour_spend;
-                                   // $user_time_spend_minute[$user_id] +=$minute_spend;
-                                   // $user_time_spend_second[$user_id] +=$second_spend;
+                                   $user_time_spend_hour[$user_id] +=$hour_spend;
+                                   $user_time_spend_minute[$user_id] +=$minute_spend;
+                                   $user_time_spend_second[$user_id] +=$second_spend;
                                     //echo '<pre>'.var_export($hour_spend, true).'</pre>';
                                 }
 
@@ -559,7 +576,7 @@ if(!is_user_logged_in()){
 
         //echo '<pre>'.var_export($user_time_spend_hour, true).'</pre>';
 
-       // echo '<pre>'.var_export($user_time_spend_minute, true).'</pre>';
+        //echo '<pre>'.var_export($user_time_spend_minute, true).'</pre>';
 
          ?>
         <br>
@@ -606,7 +623,7 @@ if(!is_user_logged_in()){
 
                 <tr class="thead">
                     <td colspan=""><?php echo $display_name; ?></td>
-                    <td colspan=""><?php //echo $user_hour+$user_offset_hour.':'.$user_minute_remin.':'.$user_second_remin; ?></td>
+                    <td colspan=""><?php echo $user_hour+$user_offset_hour.':'.$user_minute_remin.':'.$user_second_remin; ?></td>
                     <td colspan=""><?php //echo $user_minute_remin; ?></td>
 
                 </tr>

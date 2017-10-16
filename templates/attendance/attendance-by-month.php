@@ -95,7 +95,7 @@ else{
 	
 	update_post_meta($post_id,'month',  $current_month);
 	update_post_meta($post_id,'year',  $current_year);
-	update_post_meta($post_id,'start_hour',  10);	
+	update_post_meta($post_id,'late_hour',  10);
 	update_post_meta($post_id,'weekend_days',  'Fri,Sat');
 	update_post_meta($post_id,'off_days',  '');	
 
@@ -108,8 +108,8 @@ else{
 
 $month 	= get_post_meta( $post_id, 'month', true );
 $year 	= get_post_meta( $post_id, 'year', true );
-$start_hour 	= get_post_meta( $post_id, 'start_hour', true );
-$start_time 	= strtotime( $start_hour );
+$late_hour 	= get_post_meta( $post_id, 'late_hour', true );
+$start_time 	= strtotime( $late_hour );
 
 $weekend_days 	= get_post_meta( $post_id, 'weekend_days', true );
 $weekend_days_array = explode(',',$weekend_days);
@@ -132,7 +132,7 @@ if(!is_user_logged_in()){
 }
 
 
-//echo '<pre>'.var_export($start_hour, true).'</pre>';
+//echo '<pre>'.var_export($late_hour, true).'</pre>';
 ?>
 <div class="pm-attendance">
 

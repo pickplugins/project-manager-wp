@@ -46,6 +46,8 @@ class class_pm_post_meta_attendance{
 		$month 	= get_post_meta( $post_id, 'month', true );
         $year 	= get_post_meta( $post_id, 'year', true );
         $start_hour 	= get_post_meta( $post_id, 'start_hour', true );
+		$late_hour 	= get_post_meta( $post_id, 'late_hour', true );
+		$end_hour 	= get_post_meta( $post_id, 'end_hour', true );
         $weekend_days 	= get_post_meta( $post_id, 'weekend_days', true );
         $weekend_days_array = explode(',',$weekend_days);
 
@@ -113,6 +115,12 @@ class class_pm_post_meta_attendance{
                     <div class="title">Start hour, ex: 10 => 10AM 22 => 10PM</div>
                     <input placeholder="10:00:00" type="text" name="start_hour" value="<?php echo $start_hour; ?>">
 
+                    <div class="title">Late hour, ex: 10 => 10AM 22 => 10PM</div>
+                    <input placeholder="10:12:00" type="text" name="late_hour" value="<?php echo $late_hour; ?>">
+
+                    <div class="title">End hour, ex: 10 => 10AM 22 => 10PM</div>
+                    <input placeholder="10:12:00" type="text" name="end_hour" value="<?php echo $end_hour; ?>">
+
                     <div class="title">Weekend, ex: Sat,Sun</div>
                     <input type="text" name="weekend_days" value="<?php echo $weekend_days; ?>">
 
@@ -163,6 +171,13 @@ class class_pm_post_meta_attendance{
 
         $start_hour = sanitize_text_field( $_POST['start_hour'] );
         update_post_meta( $post_id, 'start_hour', $start_hour );
+
+		$late_hour = sanitize_text_field( $_POST['late_hour'] );
+		update_post_meta( $post_id, 'late_hour', $late_hour );
+
+		$end_hour = sanitize_text_field( $_POST['end_hour'] );
+		update_post_meta( $post_id, 'end_hour', $end_hour );
+
 
         $weekend_days = sanitize_text_field( $_POST['weekend_days'] );
         update_post_meta( $post_id, 'weekend_days', $weekend_days );
