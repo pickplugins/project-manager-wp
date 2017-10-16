@@ -159,23 +159,7 @@ class class_pm_post_meta_to_do{
                 </div>
             </div>            
 			 
-			
-			<div class="half todo-progress full">
-            	<div class="inner">
-                
-                    <h3>Work Progress</h3>
-                    <span class="button add-progress" post_id="<?php echo $post->ID; ?>"><i class="fa fa-plus-square" aria-hidden="true"></i> Add Progress</span>
-                    <span class="button close-progress"><i class="fa fa-times" aria-hidden="true"></i> Close Dialog</span>
-					
-					<div class="progress-input full">
-						<?php wp_editor( '', 'todo-progress-editor', array( 'editor_height' => 200 ) ); ?>
-						<div class="button submit-progress" todo_id="<?php echo get_the_ID(); ?>" ><i class="fa fa-hand-pointer-o" aria-hidden="true"></i> Submit</div>
-						<div class="submit-progress-status"><i class="fa fa-cog fa-spin" aria-hidden="true"></i></div>
-					</div>
-                    
-                </div>
 
-            </div>
 			
 		</div> 
 		
