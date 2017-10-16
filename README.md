@@ -35,6 +35,28 @@ WordPress plugin to manage project in a beautiful way, create project asign admi
     * To-do progress.
         * Each to-do can have unlimited work progress.
     * To-do notification.
+* Attendance
+    * Attendance count for each user.
+    * Office start time, Late time, End time.
+    * Total hour working time.
+    * Total late time.
+    * Total lunch count and cost.
+    * Weekend, Offdays.
+    * Total weekend count.
+    * Total offday count
+    * Total working day count.
+    * Admin can set present/absent for any user.
+    * Admin can set lunch/no lunch for any user.
+* Salary
+    * Salary for each month.
+    * Currency.
+    * Basic salary.
+    * Lunch cost.
+    * Bonus cost.
+    * Total basic count.
+    * Total lunch count.
+    * Total bonus count.
+    * Total salary count.
 
 
 # Shortcodes
