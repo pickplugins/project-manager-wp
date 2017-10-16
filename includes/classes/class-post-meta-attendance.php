@@ -50,6 +50,8 @@ class class_pm_post_meta_attendance{
 		$end_hour 	= get_post_meta( $post_id, 'end_hour', true );
         $weekend_days 	= get_post_meta( $post_id, 'weekend_days', true );
         $weekend_days_array = explode(',',$weekend_days);
+		$currency 	= get_post_meta( $post_id, 'currency', true );
+		$lunch_cost 	= get_post_meta( $post_id, 'lunch_cost', true );
 
         $user_ids	= get_post_meta( $post_id, 'user_ids', true );
         $user_ids_array = explode(',',$user_ids);
@@ -131,6 +133,12 @@ class class_pm_post_meta_attendance{
                     <div class="title">Users ids, ex: 5,4,6</div>
                     <input type="text" name="user_ids" value="<?php echo $user_ids; ?>">
 
+                    <div class="title">Currency</div>
+                    <input placeholder="$" type="text" name="currency" value="<?php echo $currency; ?>">
+
+                    <div class="title">Lunch cost</div>
+                    <input placeholder="60" type="text" name="lunch_cost" value="<?php echo $lunch_cost; ?>">
+
 
                 </div>
 
@@ -188,8 +196,12 @@ class class_pm_post_meta_attendance{
 
         $off_days = sanitize_text_field( $_POST['off_days'] );
         update_post_meta( $post_id, 'off_days', $off_days );
-		
-		
+
+		$currency = sanitize_text_field( $_POST['currency'] );
+		update_post_meta( $post_id, 'currency', $currency );
+
+		$lunch_cost = sanitize_text_field( $_POST['lunch_cost'] );
+		update_post_meta( $post_id, 'lunch_cost', $lunch_cost );
 		//var_dump($attendance_status);
 		
 		//if( !is_array( $pm_attendance_meta_ori ) ) $pm_attendance_meta_ori = array();

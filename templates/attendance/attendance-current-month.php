@@ -74,7 +74,7 @@ else{
 
 }
 
-
+//echo '<pre>'.var_export($post_id, true).'</pre>';
 //$user_ids = get_option('pm_atten_user_ids');
 //$user_ids = explode(',',$user_ids);
 
@@ -112,6 +112,10 @@ $off_days 	= get_post_meta( $post_id, 'off_days', true );
 $off_days_array = explode(',',$off_days);
 
 $attendance_data 	= get_post_meta( $post_id, 'attendance_data', true );
+
+
+$currency 	= get_post_meta( $post_id, 'currency', true );
+$lunch_cost 	= get_post_meta( $post_id, 'lunch_cost', true );
 
 
 if(!is_user_logged_in()){
@@ -217,7 +221,7 @@ if(!is_user_logged_in()){
 					<td colspan=""><?php echo $display_name; ?></td>
 					<td colspan=""><?php echo $user_att_count; ?></td>
 					<td colspan=""><?php echo $user_lunch_count; ?></td>
-                <td colspan=""><?php echo $user_lunch_count.'*60 = '. ($user_lunch_count*60).'Tk'; ?></td>
+                <td colspan=""><?php echo $user_lunch_count.'*60 = '. ($user_lunch_count*$lunch_cost); ?> <?php echo $currency;  ?></td>
 				</tr>
 				
 
