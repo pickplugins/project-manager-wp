@@ -57,7 +57,12 @@
   border-left: 3px solid #fff;
   font-size: 12px;
   line-height: normal;
-  padding: 10px 15px;
+  padding: 10px 5px;
+}
+
+.pm-notify .item .thumb {
+  float: left;
+  margin-right: 10px;
 }
 
 .pm-notify .item.read {

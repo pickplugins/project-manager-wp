@@ -1,6 +1,7 @@
 # Project Manager for WordPress
 WordPress plugin to manage project in a beautiful way, create project asign admin, user, workers and manager for each task and to-do's
 
+**Project Manager by** [PickPlugins](https://www.pickplugins.com)
 
 
 # Features

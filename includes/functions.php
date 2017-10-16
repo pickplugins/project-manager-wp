@@ -115,6 +115,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 				if( $action_type == 'submit' ){
 		 
 					echo '<div notify-id='.$id.' class="item">';
+
 					echo '<b>'.$action_by_user->display_name.'</b> has submitted the '.$post_type->labels->singular_name.' <a href="'.get_permalink($post_id).'">'.get_the_title($post_id).'</a>';
 					echo '</div>';
 				}	
@@ -122,6 +123,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 				elseif( $action_type == 'update' ){
 		 
 					echo '<div notify-id='.$id.' class="item">';
+					echo '<img src="'.get_avatar_url($action_by,  array('size'=>40)).'" class="thumb">';
 					echo '<b>'.$action_by_user->display_name.'</b> has updated the '.$post_type->labels->singular_name.' <a href="'.get_permalink($post_id).'">'.get_the_title($post_id).'</a>';
 					echo '</div>';
 				}					
