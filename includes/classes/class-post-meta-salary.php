@@ -80,6 +80,7 @@ class class_pm_post_meta_salary{
 		$user_ids_array = explode(',',$user_ids);
 
         $salary_data 	= get_post_meta( $post_id, 'salary_data', true );
+		$currency 	= get_post_meta( $post_id, 'currency', true );
 
 
         //echo '<pre>'.var_export($_POST, true).'</pre>';
@@ -121,13 +122,17 @@ class class_pm_post_meta_salary{
             <div class="half">
             	<div class="inner">
                     <div class="title">Month</div>
-                    <input type="text" name="month" value="<?php echo $month; ?>">
+                    <input placeholder="09" type="text" name="month" value="<?php echo $month; ?>">
 
                     <div class="title">Year</div>
-                    <input type="text" name="year" value="<?php echo $year; ?>">
+                    <input placeholder="2017" type="text" name="year" value="<?php echo $year; ?>">
 
 		            <div class="title">User ids</div>
-		            <input type="text" name="user_ids" value="<?php echo $user_ids; ?>">
+		            <input placeholder="2,4,5,7" type="text" name="user_ids" value="<?php echo $user_ids; ?>">
+
+
+                    <div class="title">Currency</div>
+                    <input placeholder="$" type="text" name="currency" value="<?php echo $currency; ?>">
 
                     <p></p>
 
@@ -227,7 +232,7 @@ class class_pm_post_meta_salary{
 																<input placeholder="Bonus" name="salary_data[<?php echo $user_id; ?>][bonus]" style="width: 80px" type="text" value="<?php echo $bonus; ?>">
 																<span> = </span>
 
-																<input readonly placeholder="Total" name="" style="width: 80px" type="text" value="<?php echo $total; ?>Tk">
+																<input readonly placeholder="Total" name="" style="width: 80px" type="text" value="<?php echo $total; ?><?php echo $currency; ?>">
 			                                                    <input type="button" class="button reset-data" value="Reset">
 
 
@@ -298,12 +303,12 @@ class class_pm_post_meta_salary{
 
 					<div class="">
 
-						Total basic: <?php echo $total_basic; ?><br />
-						Total lunch: <?php echo $total_lunch; ?><br />
-						Total bonus: <?php echo $total_bonus; ?><br />
+						Total basic: <?php echo $total_basic; ?><?php echo $currency; ?><br />
+						Total lunch: <?php echo $total_lunch; ?><?php echo $currency; ?><br />
+						Total bonus: <?php echo $total_bonus; ?><?php echo $currency; ?><br />
 						<hr>
 
-						Total: <?php echo $total_basic+$total_lunch+$total_bonus; ?>Tk<br />
+						Total: <?php echo $total_basic+$total_lunch+$total_bonus; ?> <?php echo $currency; ?> <br />
 					</div>
                     
                 </div>
@@ -339,6 +344,10 @@ class class_pm_post_meta_salary{
 
 		$user_ids = sanitize_text_field( $_POST['user_ids'] );
 		update_post_meta( $post_id, 'user_ids', $user_ids );
+
+		$currency = sanitize_text_field( $_POST['currency'] );
+		update_post_meta( $post_id, 'currency', $currency );
+
 
 		$salary_data = stripslashes_deep( $_POST['salary_data'] );
 		update_post_meta( $post_id, 'salary_data', $salary_data );
