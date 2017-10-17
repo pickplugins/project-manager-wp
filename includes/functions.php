@@ -111,56 +111,60 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 			$action_by_user = get_user_by('ID', $action_by);
 			
 			if($action_to ==$userid){
-				
+
+				echo '<div notify-id='.$id.' class="item">';
+				echo '<img src="'.get_avatar_url($action_by,  array('size'=>40)).'" class="thumb">';
+
 				if( $action_type == 'submit' ){
 		 
-					echo '<div notify-id='.$id.' class="item">';
+					//echo '<div notify-id='.$id.' class="item">';
 
 					echo '<b>'.$action_by_user->display_name.'</b> has submitted the '.$post_type->labels->singular_name.' <a href="'.get_permalink($post_id).'">'.get_the_title($post_id).'</a>';
-					echo '</div>';
+					//echo '</div>';
 				}	
 				
 				elseif( $action_type == 'update' ){
 		 
-					echo '<div notify-id='.$id.' class="item">';
-					echo '<img src="'.get_avatar_url($action_by,  array('size'=>40)).'" class="thumb">';
+					//echo '<div notify-id='.$id.' class="item">';
+
 					echo '<b>'.$action_by_user->display_name.'</b> has updated the '.$post_type->labels->singular_name.' <a href="'.get_permalink($post_id).'">'.get_the_title($post_id).'</a>';
-					echo '</div>';
+					//echo '</div>';
 				}					
 				
 				elseif( $action_type == 'assign' ){
 		 
-					echo '<div notify-id='.$id.' class="item">';
+					//echo '<div notify-id='.$id.' class="item">';
 					echo '<b>'.$action_by_user->display_name.'</b> has assigned the '.$post_type->labels->singular_name.' <a href="'.get_permalink($post_id).'">'.get_the_title($post_id).'</a>';
-					echo '</div>';
+					//echo '</div>';
 				}				
 				
 				elseif( $action_type == 're-assign' ){
 		 
-					echo '<div notify-id='.$id.' class="item">';
+					//echo '<div notify-id='.$id.' class="item">';
 					echo '<b>'.$action_by_user->display_name.'</b> has re-assigned the '.$post_type->labels->singular_name.' <a href="'.get_permalink($post_id).'">'.get_the_title($post_id).'</a>';
-					echo '</div>';
+					//echo '</div>';
 				}				
 				elseif( $action_type == 'complete' ){
 		 
-					echo '<div notify-id='.$id.' class="item">';
+					//echo '<div notify-id='.$id.' class="item">';
 					echo '<b>'.$action_by_user->display_name.'</b> has marked as completed the '.$post_type->labels->singular_name.' <a href="'.get_permalink($post_id).'">'.get_the_title($post_id).'</a>';
-					echo '</div>';
+					//echo '</div>';
 				}				
 				
 				elseif( $action_type == 'pending' ){
 		 
-					echo '<div notify-id='.$id.' class="item">';
+					//echo '<div notify-id='.$id.' class="item">';
 					echo '<b>'.$action_by_user->display_name.'</b> has marked as pending the '.$post_type->labels->singular_name.' <a href="'.get_permalink($post_id).'">'.get_the_title($post_id).'</a>';
-					echo '</div>';
+					//echo '</div>';
 				}					
 				elseif( $action_type == 'on-hold' ){
 		 
-					echo '<div notify-id='.$id.' class="item">';
+					//echo '<div notify-id='.$id.' class="item">';
 					echo '<b>'.$action_by_user->display_name.'</b> has marked as on-hold the '.$post_type->labels->singular_name.' <a href="'.get_permalink($post_id).'">'.get_the_title($post_id).'</a>';
-					echo '</div>';
-				}					
-				
+					//echo '</div>';
+				}
+
+				echo '</div>';
 			}
 	
 			
@@ -221,54 +225,57 @@ function pm_notify(){
 			$action_by_user = get_user_by('ID', $action_by);
 			
 			if($action_to ==$userid){
+				echo '<div notify-id='.$id.' class="item">';
+				echo '<img src="'.get_avatar_url($action_by,  array('size'=>40)).'" class="thumb">';
 				
 				if( $action_type == 'submit' ){
 		 
-					echo '<div notify-id='.$id.' class="item">';
+					//echo '<div notify-id='.$id.' class="item">';
 					echo '<b>'.$action_by_user->display_name.'</b> has submitted the '.$post_type->labels->singular_name.' <a href="'.get_permalink($post_id).'">'.get_the_title($post_id).'</a>';
-					echo '</div>';
+					//echo '</div>';
 				}	
 				
 				elseif( $action_type == 'update' ){
 		 
-					echo '<div notify-id='.$id.' class="item">';
+					//echo '<div notify-id='.$id.' class="item">';
 					echo '<b>'.$action_by_user->display_name.'</b> has updated the '.$post_type->labels->singular_name.' <a href="'.get_permalink($post_id).'">'.get_the_title($post_id).'</a>';
-					echo '</div>';
+					//echo '</div>';
 				}					
 				
 				elseif( $action_type == 'assign' ){
 		 
-					echo '<div notify-id='.$id.' class="item">';
+					//echo '<div notify-id='.$id.' class="item">';
 					echo '<b>'.$action_by_user->display_name.'</b> has assigned the '.$post_type->labels->singular_name.' <a href="'.get_permalink($post_id).'">'.get_the_title($post_id).'</a>';
-					echo '</div>';
+					//echo '</div>';
 				}				
 				
 				elseif( $action_type == 're-assign' ){
 		 
-					echo '<div notify-id='.$id.' class="item">';
+					//echo '<div notify-id='.$id.' class="item">';
 					echo '<b>'.$action_by_user->display_name.'</b> has re-assigned the '.$post_type->labels->singular_name.' <a href="'.get_permalink($post_id).'">'.get_the_title($post_id).'</a>';
-					echo '</div>';
+					//echo '</div>';
 				}				
 				elseif( $action_type == 'complete' ){
 		 
-					echo '<div notify-id='.$id.' class="item">';
+					//echo '<div notify-id='.$id.' class="item">';
 					echo '<b>'.$action_by_user->display_name.'</b> has marked as completed the '.$post_type->labels->singular_name.' <a href="'.get_permalink($post_id).'">'.get_the_title($post_id).'</a>';
-					echo '</div>';
+					//echo '</div>';
 				}				
 				
 				elseif( $action_type == 'pending' ){
 		 
-					echo '<div notify-id='.$id.' class="item">';
+					//echo '<div notify-id='.$id.' class="item">';
 					echo '<b>'.$action_by_user->display_name.'</b> has marked as pending the '.$post_type->labels->singular_name.' <a href="'.get_permalink($post_id).'">'.get_the_title($post_id).'</a>';
-					echo '</div>';
+					//echo '</div>';
 				}					
 				elseif( $action_type == 'on-hold' ){
 		 
-					echo '<div notify-id='.$id.' class="item">';
+					//echo '<div notify-id='.$id.' class="item">';
 					echo '<b>'.$action_by_user->display_name.'</b> has marked as on-hold the '.$post_type->labels->singular_name.' <a href="'.get_permalink($post_id).'">'.get_the_title($post_id).'</a>';
-					echo '</div>';
-				}					
-				
+					//echo '</div>';
+				}
+
+				echo '</div>';
 			}
 	
 			
