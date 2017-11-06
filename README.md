@@ -48,6 +48,7 @@ WordPress plugin to manage project in a beautiful way, create project asign admi
     * Total working day count.
     * Admin can set present/absent for any user.
     * Admin can set lunch/no lunch for any user.
+    * Month selection
 * Salary
     * Salary for each month.
     * Currency.

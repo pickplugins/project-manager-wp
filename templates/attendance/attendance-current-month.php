@@ -609,6 +609,7 @@ if(!is_user_logged_in()){
         //echo '<pre>'.var_export($user_late_time_array, true).'</pre>';
 
 
+        if(!empty($user_late_time_array))
         foreach ($user_late_time_array as $late_user_id=>$late_time){
 
             foreach ($late_time as $late_count){
@@ -622,6 +623,7 @@ if(!is_user_logged_in()){
 
         //echo '<pre>'.var_export($user_total_late, true).'</pre>';
 
+        if(!empty($user_total_late))
         foreach ($user_total_late as $late_user_id=>$late_count){
 
 	        $user_total_late_user_id[$late_user_id] = date('H:i:s', $late_count);
