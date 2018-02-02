@@ -98,7 +98,7 @@ jQuery(document).ready(function($) {
 
 
 
-	$(document).on('click', '.pm-notify .item', function(){
+	$(document).on('click', '.pm-notify .item .notify-mark', function(){
 
 		notify_id = $(this).attr('notify-id');
 	

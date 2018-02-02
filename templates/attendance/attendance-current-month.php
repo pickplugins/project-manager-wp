@@ -21,7 +21,6 @@ $current_month_name = date('M', strtotime('+'.$gmt_offset.' hour'));
 $current_year = date('Y', strtotime('+'.$gmt_offset.' hour'));
 
 
-
 $meta_query[] = array(
 
     'key' => 'month',
@@ -68,9 +67,17 @@ else{
 	
 	update_post_meta($post_id,'month',  $current_month);
 	update_post_meta($post_id,'year',  $current_year);
-	update_post_meta($post_id,'late_hour',  10);
+
+	update_post_meta($post_id,'start_hour',  '10:00:00');
+	update_post_meta($post_id,'late_hour',  '10:15:00');
+	update_post_meta($post_id,'end_hour',  '17:00:00');
+
+	update_post_meta($post_id,'user_ids',  '1,2,4,5');
+	//update_post_meta($post_id,'late_hour',  10);
 	update_post_meta($post_id,'weekend_days',  'Fri,Sat');
-	update_post_meta($post_id,'off_days',  '');	
+	update_post_meta($post_id,'off_days',  '');
+	update_post_meta($post_id,'currency',  'Tk');
+	update_post_meta($post_id,'lunch_cost',  60);
 
 }
 
@@ -92,6 +99,8 @@ $start_hour_display = $start_hour->format('h:i A');
 
 
 $late_hour 	= get_post_meta( $post_id, 'late_hour', true );
+
+
 $late_hour 	= new DateTime($late_hour );
 $late_hour_display = $late_hour->format('h:i A');
 
@@ -126,7 +135,7 @@ if(!is_user_logged_in()){
 }
 
 
-//echo '<pre>'.var_export($late_hour, true).'</pre>';
+//echo '<pre>'.var_export($late_hour_display, true).'</pre>';
 ?>
 <div class="pm-attendance">
 
@@ -334,10 +343,10 @@ if(!is_user_logged_in()){
                                     $login = '';
                                 }
 
+
+
 								
-								
-								
-//echo '<pre>'.var_export($login_time, true).'</pre>';
+//echo '<pre>'.var_export(strtotime($late_hour_display), true).'</pre>';
 //echo '<pre>'.var_export($start_time, true).'</pre>';
 //echo '<pre>'.var_export(($start_time-$login_time), true).'</pre>';
 
@@ -439,20 +448,23 @@ if(!is_user_logged_in()){
 
                                         <?php
 
-										$login_delay = $start_time-$login_time;
+										$login_delay = strtotime($late_hour_display) - $login_time;
 
-                                        if($is_present=='yes' && $login_delay<0 ){
+										//var_dump($start_time);
+
+                                        //echo $login_time;
+                                        if($is_present=='yes' && $login_delay < 0 ){
 
 	                                        $user_late_time = date("H:i:s", absint($login_delay));
 	                                        $user_late_time_array[$user_id][$i] = strtotime($user_late_time);
 
+	                                        //echo $login_delay;
 
                                             ?>
                                             <div class="is-late">
-                                            <i title="Late <?php echo date("H:i:s", absint($login_delay)); ?>" class="fa fa-clock-o" aria-hidden="true"></i>
+                                                <i title="Late <?php echo date("H:i:s", absint($login_delay)); ?>" class="fa fa-clock-o" aria-hidden="true"></i>
                                             </div>
                                             <?php
-
 
                                         }
 

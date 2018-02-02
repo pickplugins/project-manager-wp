@@ -120,6 +120,7 @@ class ProjectManager{
         require_once( PM_PLUGIN_DIR . 'includes/shortcodes/class-shortcode-attendance.php');
 		require_once( PM_PLUGIN_DIR . 'includes/shortcodes/class-shortcode-templates-list.php');
 
+		require_once( PM_PLUGIN_DIR . 'includes/shortcodes/class-shortcode-notice-archive.php');
 		require_once( PM_PLUGIN_DIR . 'includes/shortcodes/class-shortcode-bookmark.php');
 
 
@@ -197,6 +198,8 @@ class ProjectManager{
 		//global
 		//wp_enqueue_style('font-awesome', PM_PLUGIN_URL.'assets/global/css/font-awesome.css');
 		wp_enqueue_style('project-archive', PM_PLUGIN_URL.'assets/front/css/project-archive.css');
+		wp_enqueue_style('notice-archive', PM_PLUGIN_URL.'assets/front/css/notice-archive.css');
+
         wp_enqueue_style('task-archive', PM_PLUGIN_URL.'assets/front/css/task-archive.css');
         wp_enqueue_style('to-do-archive', PM_PLUGIN_URL.'assets/front/css/to-do-archive.css');
         wp_enqueue_style('single-project', PM_PLUGIN_URL.'assets/front/css/single-project.css');

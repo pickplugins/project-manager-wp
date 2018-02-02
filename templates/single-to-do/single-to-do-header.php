@@ -306,42 +306,13 @@ else{
 
 	            ?>
                 <div class="item">
-                    <span class="remove"><i class="fa fa-times" aria-hidden="true"></i></span>
-
-
 
                     <div class="item-header">
 
-                        <span class="title">Dummy title</span>
-
-                        <span class="datetime">04/20/2017</span>
-                        <span class="user">Nur Hasan</span>
-
-                    </div>
-                    <div class="item-details">
-
-                        <p class="full">
-                            Title:<br/>
-                            <input type="text" value="" name="to_do_check_list[<?php echo $unique_key; ?>][name]">
-                        </p>
-
-                        <p class="full">
-                            Details:<br/>
-
-
-                            <?php
-
-                            wp_editor( '', 'to_do_check_list'.$unique_key, $settings = array('textarea_name'=>'to_do_check_list['.$unique_key.'][details]') );
-                            ?>
-
-                        </p>
-
-                        <input type="hidden" name="to_do_check_list[<?php echo $unique_key; ?>][user_id]" value="<?php echo $userid; ?>" />
-                        <input type="hidden" name="to_do_check_list[<?php echo $unique_key; ?>][datetime]" value="<?php echo $datetime; ?>" />
+                        <span class="title">No cheklist found.</span>
 
 
                     </div>
-
                 </div>
 	            <?php
 
@@ -364,6 +335,9 @@ else{
 		            $files = $submission['files'];
 
 		            $user_data = get_user_by('ID', $user_id);
+
+		            $datetime_data = new DateTime($datetime);
+
 
 		            ?>
                     <div class="item">
@@ -397,7 +371,7 @@ else{
 
                             </span>
 
-                            <span class="datetime"><?php echo $datetime; ?></span>
+                            <span class="datetime"><?php echo $datetime_data->format('H:i d M, Y'); ?></span>
                             <span class="user"><?php echo $user_data->display_name; ?></span>
 
 
@@ -495,6 +469,8 @@ else{
 					$gmt_offset = get_option('gmt_offset');
 					$datetime = date('Y-m-d h:i:s', strtotime('+'.$gmt_offset.' hour'));
 
+
+
                     ?>
                     <div class="item">
 						<span class="remove"><i class="fa fa-times" aria-hidden="true"></i></span>
@@ -563,7 +539,8 @@ else{
                         $name = $submission['name'];
                         $user_id = $submission['user_id'];						
 						$datetime = $submission['datetime'];
-					
+
+	                    $datetime_data = new DateTime($datetime);
 						
                         $details = $submission['details'];
                         $files = $submission['files'];
@@ -583,7 +560,7 @@ else{
 								
                                 <span class="title"><?php echo $name; ?></span>
 								
-								<span class="datetime"><?php echo $datetime; ?></span>
+								<span class="datetime"><?php echo $datetime_data->format('H:i d M, Y'); ?></span>
 								<span class="user"><?php echo $user_data->display_name; ?></span>
 
 								

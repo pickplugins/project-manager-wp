@@ -113,6 +113,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 			if($action_to ==$userid){
 
 				echo '<div notify-id='.$id.' class="item">';
+				echo '<span notify-id='.$id.' class="notify-mark"><i class="fa fa-bell-o" aria-hidden="true"></i></span>';
 				echo '<img src="'.get_avatar_url($action_by,  array('size'=>40)).'" class="thumb">';
 
 				if( $action_type == 'submit' ){
@@ -226,6 +227,8 @@ function pm_notify(){
 			
 			if($action_to ==$userid){
 				echo '<div notify-id='.$id.' class="item">';
+
+				echo '<span notify-id='.$id.' class="notify-mark"><i class="fa fa-bell-o" aria-hidden="true"></i></span>';
 				echo '<img src="'.get_avatar_url($action_by,  array('size'=>40)).'" class="thumb">';
 				
 				if( $action_type == 'submit' ){

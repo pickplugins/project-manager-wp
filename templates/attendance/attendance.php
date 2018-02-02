@@ -7,6 +7,14 @@
 if ( ! defined('ABSPATH')) exit;  // if direct access 
 
 
+if(!empty($_GET['attendance_id'])){
+	$attendance_id = $_GET['attendance_id'];
+}
+else{
+	$attendance_id = $_GET['attendance_id'];
+}
+
+
 
 $meta_query[] = array(
 
@@ -22,13 +30,14 @@ $wp_query = new WP_Query(
 		'post_type' => 'attendance',
 		'post_status' => 'publish',
 		'orderby' => 'date',
-		'meta_query' => $meta_query,
+		//'meta_query' => $meta_query,
 		//'tax_query' => $tax_query,
 		'order' => 'DESC',
 		'posts_per_page' => -1,
 
 
 	) );
+
 
 
 

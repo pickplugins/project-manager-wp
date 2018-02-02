@@ -46,6 +46,7 @@
   right: 0;
   text-align: left;
   width: 350px;
+  z-index: 999;
 }
 
 .pm-notify:hover .notify-list {
@@ -58,16 +59,32 @@
   font-size: 12px;
   line-height: normal;
   padding: 10px 5px;
+  clear: both;
+  min-height: 40px;
 }
+
+.pm-notify .item .notify-mark {
+  float: right;
+  background: #ddd;
+  /* width: 10px; */
+  /* height: 10px; */
+  text-align: center;
+  border-radius: 50%;
+  padding: 7px 10px;
+  font-size: 15px;
+}
+
+.pm-notify .item .notify-mark.read {
+  background: #5c5656e6;
+}
+
 
 .pm-notify .item .thumb {
   float: left;
   margin-right: 10px;
 }
 
-.pm-notify .item.read {
-  border-left: 3px solid #0dbbff;
-}
+
 .pm-notify .item:hover {
   background: rgba(221, 221, 221, 0.44) none repeat scroll 0 0;
   cursor: pointer;

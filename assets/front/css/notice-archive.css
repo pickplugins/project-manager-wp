@@ -1,0 +1,75 @@
+/*
+	Admin Metabox css
+*/
+
+
+.notice-archive {
+    padding: 10px 10px;
+    background: #ffce4399;
+}
+
+.notice-archive .notice-list{}
+.notice-archive .notice-list .item {
+    border-bottom: 1px dashed #535353;
+    padding: 10px 0 10px 23px;
+    position: relative;
+}
+
+.notice-archive .notice-list .item:last-child {
+    border-bottom: none;
+}
+.notice-archive .notice-list .item .new {
+    background: #3effdd;
+    padding: 1px 10px;
+    border-radius: 18px;
+    border: 1px solid #6f6565;
+}
+.notice-archive .notice-list .item .pin-icon {
+    font-size: 27px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(20deg);
+    color: #357af2;
+    transition: all ease 0.4s 0s;
+}
+.notice-archive .notice-list .item:hover .pin-icon {
+     transform: rotate(0deg);
+ }
+.notice-archive .notice-list .item .notice-title {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+.notice-archive .notice-list .item .meta{}
+.notice-archive .notice-list .item .meta span{}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

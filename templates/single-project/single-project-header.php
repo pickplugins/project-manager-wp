@@ -272,7 +272,7 @@ $paged = isset( $_GET['paged'] ) ? $_GET['paged'] : 1;
                 'post_status' => 'publish',
                 'order' => 'DESC',
                 'orderby' => 'date',
-                'posts_per_page' => 5,
+                'posts_per_page' => 20,
                 'paged' => (int)$paged,
                 'meta_query' => $meta_query,
             ));

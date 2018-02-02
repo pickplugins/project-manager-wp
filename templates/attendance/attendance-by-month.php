@@ -10,7 +10,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 
 if($_GET['attendance_id']){
 
-    $attendance_id = $_GET['attendance_id'];
+    $attendance_id = (int) $_GET['attendance_id'];
 
 	$month = get_post_meta($attendance_id, 'month', true);
 	$year = get_post_meta($attendance_id, 'year', true);
@@ -23,7 +23,7 @@ if($_GET['attendance_id']){
 
 	//$date = new DateTime();
 	$total_day =  date('t', $date);
-	//echo '<pre>'.var_export($total_day, true).'</pre>';
+
 
 
 	$gmt_offset = get_option('gmt_offset');
@@ -52,7 +52,7 @@ if($_GET['attendance_id']){
 $meta_query[] = array(
 
     'key' => 'month',
-    'value' => ($current_month),
+    'value' => $current_month,
     'compare' => '=',
 
 );
@@ -60,7 +60,7 @@ $meta_query[] = array(
 $meta_query[] = array(
 
     'key' => 'year',
-    'value' => ($current_year),
+    'value' => $current_year,
     'compare' => '=',
 
 );
@@ -75,53 +75,33 @@ $wp_query = new WP_Query(
 
     ) );
 
-if(!empty($wp_query->posts[0]->ID)){
+// echo '<pre>'.var_export($wp_query, true).'</pre>';
 
-    $post_id = $wp_query->posts[0]->ID;
-}
-else{
-
-    $post_data = array(
-        'post_title'    => $current_month_name.' '.$current_year,
-        'post_content'  => '',
-        'post_status'   => 'publish',
-        'post_type'   => 'attendance',
-
-    );
-
-    // Insert the post/job into the database
-    //wp_insert_post( $job_ID );
-    $post_id = wp_insert_post($post_data);
-	
-	update_post_meta($post_id,'month',  $current_month);
-	update_post_meta($post_id,'year',  $current_year);
-	update_post_meta($post_id,'late_hour',  10);
-	update_post_meta($post_id,'weekend_days',  'Fri,Sat');
-	update_post_meta($post_id,'off_days',  '');	
-
-}
 
 
 //$user_ids = get_option('pm_atten_user_ids');
 //$user_ids = explode(',',$user_ids);
 
 
-$month 	= get_post_meta( $post_id, 'month', true );
-$year 	= get_post_meta( $post_id, 'year', true );
-$late_hour 	= get_post_meta( $post_id, 'late_hour', true );
+$month 	= get_post_meta( $attendance_id, 'month', true );
+$year 	= get_post_meta( $attendance_id, 'year', true );
+$late_hour 	= get_post_meta( $attendance_id, 'late_hour', true );
 $start_time 	= strtotime( $late_hour );
 
-$weekend_days 	= get_post_meta( $post_id, 'weekend_days', true );
+$weekend_days 	= get_post_meta( $attendance_id, 'weekend_days', true );
 $weekend_days_array = explode(',',$weekend_days);
 
-$user_ids	= get_post_meta( $post_id, 'user_ids', true );
+$user_ids	= get_post_meta( $attendance_id, 'user_ids', true );
 $user_ids_array = explode(',',$user_ids);
 
 
-$off_days 	= get_post_meta( $post_id, 'off_days', true );
+$off_days 	= get_post_meta( $attendance_id, 'off_days', true );
 $off_days_array = explode(',',$off_days);
 
-$attendance_data 	= get_post_meta( $post_id, 'attendance_data', true );
+$attendance_data 	= get_post_meta( $attendance_id, 'attendance_data', true );
+
+
+
 
 
 if(!is_user_logged_in()){
@@ -160,8 +140,8 @@ if(!is_user_logged_in()){
 
 
 
-    <div post_id="<?php echo $post_id; ?>" class="give-atten button"><span class="loading"><i class="fa fa-cog fa-spin" aria-hidden="true"></i></span> Present</div>
-    <div post_id="<?php echo $post_id; ?>" class="left-atten button"><span class="loading"><i class="fa fa-cog fa-spin" aria-hidden="true"></i></span> Left Office</div>
+    <div post_id="<?php echo $attendance_id; ?>" class="give-atten button"><span class="loading"><i class="fa fa-cog fa-spin" aria-hidden="true"></i></span> Present</div>
+    <div post_id="<?php echo $attendance_id; ?>" class="left-atten button"><span class="loading"><i class="fa fa-cog fa-spin" aria-hidden="true"></i></span> Left Office</div>
     
 	<p></p>
 	<p></p>
@@ -494,13 +474,13 @@ if(!is_user_logged_in()){
 
                                         <?php if(current_user_can('administrator')){?>
 
-                                            <div post_id="<?php echo $post_id; ?>" user_id="<?php echo $user_id; ?>" date="<?php echo $i; ?>" month="<?php echo $month; ?>"  year="<?php echo $year; ?>" class="action-atten button"><span class="loading"><i class="fa fa-cog fa-spin" aria-hidden="true"></i></span> <?php if($is_present=='yes') echo 'Absent'; else echo 'Present'; ?></div>
+                                            <div post_id="<?php echo $attendance_id; ?>" user_id="<?php echo $user_id; ?>" date="<?php echo $i; ?>" month="<?php echo $month; ?>"  year="<?php echo $year; ?>" class="action-atten button"><span class="loading"><i class="fa fa-cog fa-spin" aria-hidden="true"></i></span> <?php if($is_present=='yes') echo 'Absent'; else echo 'Present'; ?></div>
 
                                             <?php if($is_present=='yes'):?>
-                                            <div post_id="<?php echo $post_id; ?>" user_id="<?php echo $user_id; ?>" date="<?php echo $i; ?>" month="<?php echo $month; ?>"  year="<?php echo $year; ?>" class="action-lunch button"><span class="loading"><i class="fa fa-cog fa-spin" aria-hidden="true"></i></span> <?php if($lunch=='yes') echo 'No lunch'; else echo 'Lunch'; ?></div>
+                                            <div post_id="<?php echo $attendance_id; ?>" user_id="<?php echo $user_id; ?>" date="<?php echo $i; ?>" month="<?php echo $month; ?>"  year="<?php echo $year; ?>" class="action-lunch button"><span class="loading"><i class="fa fa-cog fa-spin" aria-hidden="true"></i></span> <?php if($lunch=='yes') echo 'No lunch'; else echo 'Lunch'; ?></div>
 
 
-                                            <div post_id="<?php echo $post_id; ?>" user_id="<?php echo $user_id; ?>" date="<?php echo $i; ?>" month="<?php echo $month; ?>"  year="<?php echo $year; ?>" class="action-left button"><span class="loading"><i class="fa fa-cog fa-spin" aria-hidden="true"></i></span><input style="width: 60px" type="text" class="" placeholder="17:04:00" value=""> <span class="action-left-submit">Left</span></div>
+                                            <div post_id="<?php echo $attendance_id; ?>" user_id="<?php echo $user_id; ?>" date="<?php echo $i; ?>" month="<?php echo $month; ?>"  year="<?php echo $year; ?>" class="action-left button"><span class="loading"><i class="fa fa-cog fa-spin" aria-hidden="true"></i></span><input style="width: 60px" type="text" class="" placeholder="17:04:00" value=""> <span class="action-left-submit">Left</span></div>
 
 
 

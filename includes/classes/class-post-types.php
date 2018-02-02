@@ -17,6 +17,9 @@ class class_pm_post_types{
         add_action( 'init', array( $this, 'pm_posttype_attendance' ), 0 );
 		add_action( 'init', array( $this, 'pm_posttype_salary' ), 0 );
 		add_action( 'init', array( $this, 'pm_posttype_bookmark' ), 0 );
+		add_action( 'init', array( $this, 'pm_posttype_notice' ), 0 );
+
+
 
 
 
@@ -517,14 +520,56 @@ class class_pm_post_types{
 			) )
 		); 
 
-	 
-			
-	 
-		}
-	
-	
-	
-	
+	}
+
+
+
+
+	public function pm_posttype_notice(){
+
+		if ( post_type_exists( "notice" ) ) return;
+
+		$singular  = __( 'Notice', PM_TEXTDOMAIN );
+		$plural    = __( 'Notices', PM_TEXTDOMAIN );
+
+
+		register_post_type( "notice",
+			apply_filters( "register_post_type_notice", array(
+				'labels' => array(
+					'name' 					=> $plural,
+					'singular_name' 		=> $singular,
+					'menu_name'             => __( $singular, PM_TEXTDOMAIN ),
+					'all_items'             => __( sprintf(  'All %s', $plural ), PM_TEXTDOMAIN ),
+					'add_new' 				=> __( 'Add '.$singular, PM_TEXTDOMAIN ),
+					'add_new_item' 			=> sprintf( __( 'Add %s', PM_TEXTDOMAIN ), $singular ),
+					'edit' 					=> __( 'Edit', PM_TEXTDOMAIN ),
+					'edit_item' 			=> sprintf( __( 'Edit %s', PM_TEXTDOMAIN ), $singular ),
+					'new_item' 				=> sprintf( __( 'New %s', PM_TEXTDOMAIN ), $singular ),
+					'view' 					=> sprintf( __( 'View %s', PM_TEXTDOMAIN ), $singular ),
+					'view_item' 			=> sprintf( __( 'View %s', PM_TEXTDOMAIN ), $singular ),
+					'search_items' 			=> sprintf( __( 'Search %s', PM_TEXTDOMAIN ), $plural ),
+					'not_found' 			=> sprintf( __( 'No %s found', PM_TEXTDOMAIN ), $plural ),
+					'not_found_in_trash' 	=> sprintf( __( 'No %s found in trash', PM_TEXTDOMAIN ), $plural ),
+					'parent' 				=> sprintf( __( 'Parent %s', PM_TEXTDOMAIN ), $singular )
+				),
+				'description' => sprintf( __( 'This is where you can create and manage %s.', PM_TEXTDOMAIN ), $plural ),
+				'public' 				=> true,
+				'show_ui' 				=> true,
+				'capability_type' 		=> 'post',
+				'map_meta_cap'          => true,
+				'publicly_queryable' 	=> true,
+				'exclude_from_search' 	=> false,
+				'hierarchical' 			=> false,
+				'rewrite' 				=> true,
+				'query_var' 			=> true,
+				'supports' 				=> array('title', 'editor'),
+				'show_in_nav_menus' 	=> false,
+				'show_in_menu' 			=> 'edit.php?post_type=project',
+				'menu_icon' => 'dashicons-megaphone',
+			) )
+		);
+
+	}
 	
 	
 	
