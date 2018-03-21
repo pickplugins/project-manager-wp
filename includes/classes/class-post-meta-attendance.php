@@ -57,11 +57,11 @@ class class_pm_post_meta_attendance{
         $user_ids_array = explode(',',$user_ids);
 
         $off_days 	= get_post_meta( $post_id, 'off_days', true );
-        $off_days_array = explode(',',$off_days);
+        //$off_days_array = explode(',',$off_days);
         $attendance_data 	= get_post_meta( $post_id, 'attendance_data', true );
 
 
-        //echo '<pre>'.var_export($attendance_data, true).'</pre>';
+        //echo '<pre>'.var_export($off_days, true).'</pre>';
 
 
 
@@ -127,8 +127,65 @@ class class_pm_post_meta_attendance{
                     <input type="text" name="weekend_days" value="<?php echo $weekend_days; ?>">
 
 
-                    <div class="title">Off days, ex: 15,28</div>
-                    <input type="text" name="off_days" value="<?php echo $off_days; ?>">
+                    <div class="title">Off days</div>
+                    <div class="button add-off-day">Add</div><br><br>
+                    <div class="off-days-list">
+
+                        <?php
+
+
+                        if(!empty($off_days))
+                        foreach ($off_days as $index=>$off_day){
+
+	                        $day = $off_day['day'];
+                            $off_day_name = $off_day['name'];
+
+
+                            ?>
+                            <div class="item">
+                                <span class="button remove">X</span>
+                                <input placeholder="day, ex: 12" type="text" name="off_days[<?php echo $day; ?>][day]" value="<?php echo $day; ?>">
+                                <input placeholder="Name, ex: Independence Day" type="text" name="off_days[<?php echo $day; ?>][name]" value="<?php echo $off_day_name; ?>">
+                            </div>
+                            <?php
+                        }
+                        ?>
+
+
+                    </div>
+
+
+                    <script>
+                        jQuery(document).ready(function($){
+
+                            $(document).on('click', '.add-off-day', function() {
+
+                                now = $.now();
+
+                               html = '<div class="item">\n' +
+                                   '<span class="button remove">X</span>\n' +
+                                   '<input placeholder="day, ex: 12" type="text" name="off_days['+now+'][day]" value="">\n' +
+                                   '<input placeholder="Name, ex: Independence Day" type="text" name="off_days['+now+'][name]" value="">\n' +
+                                   '</div>';
+
+                               console.log(html);
+
+                               $('.off-days-list').append(html);
+
+                            })
+
+                            $(document).on('click', '.off-days-list .remove', function(){
+                                $(this).parent().remove();
+
+
+                            })
+
+
+
+
+                        })
+                    </script>
+
 
                     <div class="title">Users ids, ex: 5,4,6</div>
                     <input type="text" name="user_ids" value="<?php echo $user_ids; ?>">
@@ -194,7 +251,7 @@ class class_pm_post_meta_attendance{
         update_post_meta( $post_id, 'user_ids', $user_ids );
 
 
-        $off_days = sanitize_text_field( $_POST['off_days'] );
+        $off_days = stripslashes_deep( $_POST['off_days'] );
         update_post_meta( $post_id, 'off_days', $off_days );
 
 		$currency = sanitize_text_field( $_POST['currency'] );

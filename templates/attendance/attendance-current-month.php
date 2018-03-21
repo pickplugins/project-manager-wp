@@ -74,7 +74,7 @@ else{
 
 	update_post_meta($post_id,'user_ids',  '1,2,4,5');
 	//update_post_meta($post_id,'late_hour',  10);
-	update_post_meta($post_id,'weekend_days',  'Fri,Sat');
+	update_post_meta($post_id,'weekend_days',  'Fri,Sat'); // Fri,Sat
 	update_post_meta($post_id,'off_days',  '');
 	update_post_meta($post_id,'currency',  'Tk');
 	update_post_meta($post_id,'lunch_cost',  60);
@@ -118,13 +118,17 @@ $user_ids_array = explode(',',$user_ids);
 
 
 $off_days 	= get_post_meta( $post_id, 'off_days', true );
-$off_days_array = explode(',',$off_days);
+//$off_days_array = explode(',',$off_days);
 
 $attendance_data 	= get_post_meta( $post_id, 'attendance_data', true );
 
 
 $currency 	= get_post_meta( $post_id, 'currency', true );
 $lunch_cost 	= get_post_meta( $post_id, 'lunch_cost', true );
+
+
+//echo '<pre>'.var_export($off_days, true).'</pre>';
+
 
 
 if(!is_user_logged_in()){
@@ -301,7 +305,7 @@ if(!is_user_logged_in()){
                 }
 
 
-                if(in_array($i, $off_days_array)){
+                if(array_key_exists($i, $off_days)){
 
                     //var_dump($day_string);
                     $is_off_day = 'offday';
@@ -312,7 +316,7 @@ if(!is_user_logged_in()){
                 }
 
 
-            if(in_array($i, $off_days_array) || in_array($day_string, $weekend_days_array)){
+            if(array_key_exists($i, $off_days) || in_array($day_string, $weekend_days_array)){
 
                 $all_off_day +=1;
 
@@ -331,6 +335,8 @@ if(!is_user_logged_in()){
                         <?php
 
                         if(!empty($user_ids_array) && ($current_date>=$i) && empty($is_weekend) && empty($is_off_day) ):
+
+
                             foreach($user_ids_array as $user_id){
 
                                 if(!empty($attendance_data[$i][$user_id]['login'])){
@@ -564,12 +570,16 @@ if(!is_user_logged_in()){
 
                             if($is_weekend){
 
-                                echo '###### Weekend ######';
+                                echo 'Weekend';
                             }
 
                             if($is_off_day){
 
-                                echo '###### Casual Off day ######';
+                                //echo $i;
+                                //echo '###### ';
+	                            echo $off_days[$i]['name'];
+	                            //echo ' ######';
+                                //echo '###### Casual Off day ######';
                             }
 
 

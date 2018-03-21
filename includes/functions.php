@@ -6,6 +6,103 @@
 
 if ( ! defined('ABSPATH')) exit;  // if direct access 
 
+
+
+//add_shortcode('pm_off_day_update','pm_off_day_update');
+
+function pm_off_day_update(){
+
+	$wp_query = new WP_Query(
+		array (
+			'post_type' => 'attendance',
+			'post_status' => 'publish',
+			'orderby' => 'date',
+			//'meta_key' => 'task_workers',
+			//'meta_value' => array($current_user_id),
+			//'meta_compare' => 'NOT IN',
+			//'meta_query' => $meta_query,
+			//'tax_query' => $tax_query,
+			'order' => 'DESC',
+			'posts_per_page' => -1,
+			//'paged' => $paged,
+
+		) );
+
+
+
+	if ( $wp_query->have_posts() ) :
+		while ( $wp_query->have_posts() ) : $wp_query->the_post();
+
+			$off_days 	= get_post_meta( get_the_id(), 'off_days', true );
+
+			if(is_array($off_days)){
+
+				var_dump($off_days);
+			}
+			else{
+
+				echo '####### Start #######';
+				echo $off_days;
+				$off_days = explode(',', $off_days);
+
+				foreach ($off_days as $index=>$day){
+
+					if(!empty($day)){
+						$off_days_array[$day] = array(
+							'day'=>$day,
+							'name'=>'Casual Off day',
+						);
+					}
+
+
+
+
+				}
+
+				update_post_meta(get_the_id(),'off_days',  $off_days_array);
+
+
+				var_dump($off_days_array);
+				$off_days_array = array();
+
+
+				//echo $off_days;
+				echo '####### End #######';
+
+			}
+
+
+
+			//echo get_the_title();
+
+		endwhile;
+		wp_reset_query();
+	else:
+
+		echo __('No task found','classified_maker');
+
+	endif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	function pm_ajax_notify_logg(){
 		
 		$userid = get_current_user_id();

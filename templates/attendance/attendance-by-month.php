@@ -96,7 +96,7 @@ $user_ids_array = explode(',',$user_ids);
 
 
 $off_days 	= get_post_meta( $attendance_id, 'off_days', true );
-$off_days_array = explode(',',$off_days);
+//$off_days_array = explode(',',$off_days);
 
 $attendance_data 	= get_post_meta( $attendance_id, 'attendance_data', true );
 
@@ -278,7 +278,7 @@ if(!is_user_logged_in()){
                 }
 
 
-                if(in_array($i, $off_days_array)){
+                if(array_key_exists($i, $off_days)){
 
                     //var_dump($day_string);
                     $is_off_day = 'offday';
@@ -289,7 +289,7 @@ if(!is_user_logged_in()){
                 }
 
 
-            if(in_array($i, $off_days_array) || in_array($day_string, $weekend_days_array)){
+            if(array_key_exists($i, $off_days) || in_array($day_string, $weekend_days_array)){
 
                 $all_off_day +=1;
 
