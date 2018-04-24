@@ -9,18 +9,18 @@
     width: 100%;
 }
 
-.single-to-do .half {
-    display: inline-block;
-    vertical-align: top;
-    width: 49%;
-}
+
 .single-to-do .to-do-action .meta .title {
     font-weight: bold;
     margin-bottom: 20px;
 }
 
 
-
+.single-to-do .section-title {
+    border-bottom: 1px solid #ddd;
+    /* background: #dddddd80; */
+    padding: 0 10px;
+}
 
 
 
@@ -126,7 +126,7 @@
 
 
 .single-to-do .submission .list-item {
-    margin: 15px 0;
+
 }
 
 .single-to-do .submission .list-item .item{
@@ -150,12 +150,12 @@
 }
 
 .single-to-do .submission .list-item .remove {
-  background: #ff4b1e none repeat scroll 0 0;
-  color: #fff;
-  cursor: pointer;
-  float: right;
-  margin: 0 10px 0 0;
-  padding: 2px 7px;
+    background: #ff4b1e none repeat scroll 0 0;
+    color: #fff;
+    cursor: pointer;
+    float: right;
+    margin: 0;
+    padding: 0px 7px;
 }
 
 
@@ -244,8 +244,8 @@
     color: #fff;
     cursor: pointer;
     float: right;
-    margin: 0 10px 0 0;
-    padding: 2px 7px;
+    margin: 0 0px 0 0;
+    padding: 0px 7px;
 }
 
 

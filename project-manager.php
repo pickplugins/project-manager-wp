@@ -207,8 +207,11 @@ class ProjectManager{
         wp_enqueue_style('single-to-do', PM_PLUGIN_URL.'assets/front/css/single-to-do.css');
         wp_enqueue_style('attendance', PM_PLUGIN_URL.'assets/front/css/attendance.css');
         wp_enqueue_style('font-awesome', PM_PLUGIN_URL.'assets/global/css/font-awesome.css');
-        wp_enqueue_style('pm-notify', PM_PLUGIN_URL.'assets/front/css/pm-notify.css');		
-		
+        wp_enqueue_style('pm-notify', PM_PLUGIN_URL.'assets/front/css/pm-notify.css');
+
+		wp_enqueue_style('bootstrap', PM_PLUGIN_URL.'assets/front/css/bootstrap.css');
+
+
 
 		// pickform
 		//wp_enqueue_script('pickform', plugins_url( '/assets/global/pickform/scripts.js' , __FILE__ ) , array( 'jquery' ));
